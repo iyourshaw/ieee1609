@@ -1,0 +1,37 @@
+{
+    "subtype": {
+        "nullNetworking": {
+            "version": 3,
+            "nExtensions": [
+                {
+                    "extensionId": 15,
+                    "value": {
+                        "ChannelNumber80211": 180
+                    }
+                },
+                {
+                    "extensionId": 16,
+                    "value": {
+                        "DataRate80211": 12
+                    }
+                },
+                {
+                    "extensionId": 4,
+                    "value": {
+                        "TXpower80211": 24
+                    }
+                }
+            ]
+        }
+    },
+    "transport": {
+        "bcMode": {
+            "addrInfo": {
+                "extension": {
+                    "content": 130
+                }
+            }
+        }
+    },
+    "body": "001380AC6192F02E9D083516CDCBCF9E1CF940E1193BBA65E5CF2E3E9A77EE40D1C3160DA4E2177D5A0000064BC274202000C10FF194319431943194211942012083F8CA18CA18CA18CA108CA1001043FC650C650C650C65084650803022FE32808368836883682328401C10FF19431943194319421194200408BF8CA020DA20DA20DA08CA100D046FC6508F470F470F477C650807021FE32863286328632842328404010FF194319431943194211942"
+}

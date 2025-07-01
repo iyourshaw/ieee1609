@@ -1,0 +1,56 @@
+EtsiTs102941Crl {iso(1) identified-organization(3) ieee(111) 
+standards-association-numbered-series-standards(2) wave-stds(1609)  
+dot2(2) crl(3) profiles(100) etsi(1) major-version-2(2)} 
+-- OID can be modified, just set to make the code compile
+
+DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+IMPORTS
+  Ieee1609Dot2Data
+FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111) 
+standards-association-numbered-series-standards(2) wave-stds(1609)  
+dot2(2) base(1) schema(1) major-version-2(2)}
+
+  CrlContents
+FROM IEEE1609dot2CrlBaseTypes {iso(1) identified-organization(3) ieee(111) 
+standards-association-numbered-series-standards(2) wave-stds(1609)  
+dot2(2) crl(3) base-types(2) major-version-2(2)}
+
+  CrlPsid
+FROM IEEE1609dot2Crl {iso(1) identified-organization(3) ieee(111) 
+standards-association-numbered-series-standards(2) wave-stds(1609)  
+dot2(2) crl(3) protocol(1) major-version-2(2)}
+
+;
+
+EtsiTs102941CaCrlContents ::= CrlContents (WITH COMPONENTS {...,
+  typeSpecific(WITH COMPONENTS{fullHashCrl})
+})
+
+EtsiTs102941CaCrl ::= Ieee1609Dot2Data(WITH COMPONENTS {..., 
+  content (WITH COMPONENTS {
+    signedData  (WITH COMPONENTS {..., 
+      tbsData (WITH COMPONENTS {
+        payload (WITH COMPONENTS {..., 
+          data (WITH COMPONENTS {...,
+             content (WITH COMPONENTS {
+                unsecuredData (CONTAINING EtsiTs102941CaCrlContents)
+            })
+          })
+        }),
+        headerInfo (WITH COMPONENTS {..., 
+          psid (CrlPsid),
+          generationTime ABSENT,
+          expiryTime ABSENT,
+          generationLocation ABSENT,
+          p2pcdLearningRequest ABSENT,
+          missingCrlIdentifier ABSENT,
+          encryptionKey ABSENT
+        })
+      })
+    })
+  })
+})
+
+
+END

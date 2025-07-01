@@ -1,0 +1,307 @@
+Ieee1609Dot3Wsa {iso(1) identified-organization(3) ieee(111) standards-association-numbered-series-standards(2) wave-stds(1609) dot3(3) wsa(3) major-version-1(1) minor-version-1(1)}
+
+DEFINITIONS AUTOMATIC TAGS ::= 
+BEGIN
+
+/* Quality check info:
+Proper syntax and correct mapping of UPER on the intended binary presentation as specified in the main body of this document was validated with the OSS ASN.1 Studio tool.
+*/
+
+IMPORTS
+
+VarLengthNumber, EXT-TYPE, Extension, RefExt, c-Reserved, c-RepeatRate,c-TxPowerUsed80211, c-2Dlocation, c-3Dlocation, c-advertiserID, c-IPv6Address, c-servicePort,c-EDCAparameterSet, c-ChannelAccess, c-SecondaryDNS, c-GatewayMACaddress, c-ProviderMACaddress, c-RCPIthreshold, c-WSAcountThreshold, c-WSAcountThresInt, c-ProviderServContext, c-ExtendedChannelInfos, c-ApplicationData, c-ProtocolType, c-AssertedBySASigner, RepeatRate, TwoDLocation, ThreeDLocation, LTEv2xChannelInfo, AdvertiserIdentifier, ProviderServiceContext, EdcaParameterSet, ChannelAccess80211, SecondaryDns, GatewayMacAddress, IPv6Address, TXpower80211, DataRate80211, ChannelNumber80211, ServicePort, ProviderMacAddress, RcpiThreshold, WsaCountThreshold, WsaCountThresholdInterval, ApplicationData, ProtocolType, AssertedBySASigner FROM Ieee1609Dot3Wee {iso(1) identified-organization(3) ieee(111) standards-association-numbered-series-standards(2) wave-stds(1609) dot3(3) wee(1) major-version-1(1) minor-version-1(1)}
+;
+
+--
+-- The following defines the WSA data frame as described in 
+-- clause 8.2. Note: the WSA equivalent in ISO standards is called
+-- a Service Advertisement Message (i.e., SrvAdvMsg).
+--
+SrvAdvMsg ::= SEQUENCE {
+	version 	RsvAdvPrtVersion,
+       -- Indicates version number of this WSA
+	body	SrvAdvBody
+       -- Contains contents of WSA
+}
+
+--
+-- The following 4-bit field specifies the WSA Version, 
+-- see subclause 8.2.2.2
+--
+RsvAdvPrtVersion ::= INTEGER (0..15)
+
+--
+-- Version number indicating the WSA specification in this document
+-- For this standard, WSA Version shall be 3, see subclause 8.2.2.2
+--
+c-rsvAdvPrtVersionNo	INTEGER (0..15) ::= 3
+
+--
+-- The following specifies the contents of the WSA as described
+-- in clause 8.2
+--
+SrvAdvBody ::= SEQUENCE {
+	changeCount	 SrvAdvChangeCount,
+       -- Contains WSA Identifier and Content Count, see below.
+	extensions	 SrvAdvMsgHeaderExts OPTIONAL,
+       -- Contains optional WSA header WAVE Information Element
+       -- Extensions, see subclause 8.2.2.6
+	serviceInfos	 ServiceInfos OPTIONAL,
+       -- Specifies the Service Info Segment, see subclause 8.2.3
+	channelInfos	 ChannelInfos OPTIONAL,
+       -- Specifies the Channel Info Segment, see subclause 8.2.4
+	routingAdvertisement RoutingAdvertisement OPTIONAL
+       -- Specifies the WAVE Router Advertisement, see subclause 8.2.5
+	}
+
+--
+-- Contains WSA Identifier and Content Count
+--
+SrvAdvChangeCount ::= SEQUENCE {
+	saID	SrvAdvID,
+       -- This subfield is used to identify a unique WSA. Named
+       -- WSA Identifier in main body text, see subclause 8.2.2.4
+	contentCount	SrvAdvContentCount
+       -- Used by recipient to determine if a WSA is a repeat of a
+       -- previous WSA, see subclause 8.2.2.5.
+}
+
+-- Same as WSA Identifier in main body text, see subclause 8.2.2.4
+SrvAdvID ::= INTEGER (0..15)
+
+-- Content Count as described in subclause 8.2.2.5
+SrvAdvContentCount ::= INTEGER (0..15)
+
+--
+-- WSA header optional WAVE Information Element Extension
+-- See subclause 8.2.2.6
+--
+SrvAdvMsgHeaderExts ::= SEQUENCE OF SrvAdvMsgHeaderExt
+
+SrvAdvMsgHeaderExt ::= Extension {{SrvAdvMsgHeaderExtTypes}}
+
+--
+-- Specifications for each of the following extension types
+-- is found in the ASN.1 module Ieee1609Dot3Wee specified in Annex J
+--
+SrvAdvMsgHeaderExtTypes EXT-TYPE ::= {
+  { RepeatRate           IDENTIFIED BY c-RepeatRate } |
+  { TwoDLocation         IDENTIFIED BY c-2Dlocation } |
+  { ThreeDLocation       IDENTIFIED BY c-3Dlocation} |
+  { AdvertiserIdentifier IDENTIFIED BY c-advertiserID } |
+  { ExtendedChannelInfos IDENTIFIED BY c-ExtendedChannelInfos },
+  ...
+}
+
+--
+-- The following specify Extended Channel Info Segment, 
+-- see subclause 8.2.2.6.5
+--
+ExtendedChannelInfos ::= SEQUENCE OF ExtendedChannelInfo
+
+CHINFO-TYPE ::= CLASS {
+  &id    MedType UNIQUE,
+  &Type
+} WITH SYNTAX {&Type IDENTIFIED BY &id}
+
+--
+-- The following specify Extended Channel Info, 
+-- see subclause 8.2.2.6.5.1
+--
+ExtendedChannelInfo ::= SEQUENCE {
+  medId  CHINFO-TYPE.&id({ChInfoTypes}),
+  value  CHINFO-TYPE.&Type({ChInfoTypes}{@medId})
+}
+
+MedType ::= INTEGER (0..255)
+
+chInfoType-unknown   MedType ::= 0
+chInfoType-any       MedType ::= 1
+chInfoType-M5        MedType ::= 5
+chInfoType-Cv2x      MedType ::= 12
+
+ChInfoTypes CHINFO-TYPE ::= {
+  { NULL                 IDENTIFIED BY chInfoType-unknown } |
+  { NULL                 IDENTIFIED BY chInfoType-any } |
+  { ChannelInfo          IDENTIFIED BY chInfoType-M5 } |
+  { LTEv2xChannelInfo    IDENTIFIED BY chInfoType-Cv2x },
+  ...
+}
+
+-- 
+-- ServiceInfos specifies the Service Info Segment as described in
+-- subclause 8.2.3
+--
+ServiceInfos ::= SEQUENCE OF ServiceInfo
+
+-- 
+-- Each ServiceInfo specifies a Service Info Instance as described
+-- in subclause 8.2.3.1
+--
+ServiceInfo ::= SEQUENCE {
+	serviceID	VarLengthNumber,
+       -- PSID, see subclause 8.2.3.2
+	channelIndex	ChannelIndex,
+       -- Channel Index, see subclause 8.2.3.3
+	chOptions	ChannelOptions 
+       -- 2-bit field reserved for other standards
+}
+
+--
+-- The following forces the 2-bit field chOptions to 0’s
+--
+ChannelOptions ::= SEQUENCE {
+	reserved1	NULL OPTIONAL, -- not used in WSA, generates a reserved '0' bit
+	reserved2	NULL OPTIONAL, -- not used in WSA, generates a reserved '0' bit
+       -- Forces 2-bit subfield to 0’s
+	extensions	ServiceInfoExts OPTIONAL 
+       -- Specifies WAVE Info Element Extensions
+}
+
+--
+-- ChannelIndex specifies Channel Index as described in 
+-- subclause 8.2.3.3
+--
+ChannelIndex ::= INTEGER {
+	notUsed	(0), -- Indicates ChannelInfos not used 
+	firstEntry	(1)  -- >0 == Index to ChannelInfo instance
+}(0..31)
+
+--
+-- Service Info optional WAVE Information Element Extension
+-- See subclause 8.2.3.5
+--
+ServiceInfoExts ::= SEQUENCE OF ServiceInfoExt
+
+ServiceInfoExt ::= Extension {{ServiceInfoExtTypes}}
+
+--
+-- Specifications for each of the following extension types
+-- is found in the ASN.1 module Ieee1609Dot3Wee specified in Annex J
+--
+ServiceInfoExtTypes EXT-TYPE ::= {
+	{ ProviderServiceContext  IDENTIFIED BY c-ProviderServContext } |
+	{ IPv6Address        IDENTIFIED BY c-IPv6Address } |
+	{ ServicePort        IDENTIFIED BY c-servicePort} |
+	{ ProviderMacAddress    IDENTIFIED BY c-ProviderMACaddress } |
+	{ RcpiThreshold       IDENTIFIED BY c-RCPIthreshold } |
+	{ WsaCountThreshold	     IDENTIFIED BY c-WSAcountThreshold } |
+	{ WsaCountThresholdInterval IDENTIFIED BY c-WSAcountThresInt } |
+	{ ApplicationData IDENTIFIED BY c-ApplicationData } |
+	{ ProtocolType         IDENTIFIED BY c-ProtocolType } |
+	{ NULL	IDENTIFIED BY c-AssertedBySASigner },
+	...
+}
+
+-- 
+-- ChannelInfos specifies the Channel Info Segment as described in
+-- subclause 8.2.4
+--
+ChannelInfos ::= SEQUENCE OF ChannelInfo
+
+-- 
+-- Each ChannelInfo specifies a Channel Info Instance as described
+-- in subclause 8.2.4.1
+--
+ChannelInfo ::= SEQUENCE{
+	operatingClass	OperatingClass80211,
+       -- Operation Class, see subclause 8.2.4.2
+	channelNumber	ChannelNumber80211,
+       -- Channel Number, see subclause 8.2.4.3
+	powerLevel	TXpower80211,
+       -- Transmit Power Level, see subclause 8.2.4.4
+	dataRate	WsaChInfoDataRate,
+       -- Specifies Adaptable and Data Rate, see below
+	extensions	ChInfoOptions
+       -- Indicates presence of Channel Info optional WAVE
+       -- Element Extension, see below
+}
+
+OperatingClass80211 ::= INTEGER (0..255)
+
+WsaChInfoDataRate ::= SEQUENCE{
+	adaptable	BIT STRING (SIZE(1)),
+       -- Adaptable, see subclause 8.2.4.5
+	dataRate	INTEGER (0..127)
+       -- Data Rate, see subclause 8.2.4.6
+}
+
+--
+-- This 8-bit field was included to maintain byte alignment in the
+-- figures based main body text. Only one single bit was needed, which
+-- is bit 0 (LSB). All other bits 7 through 1 are forced to ‘0’.
+--
+ChInfoOptions ::= SEQUENCE {
+	option1	NULL OPTIONAL, -- not used, generates a reserved '0' bit
+	option2	NULL OPTIONAL, -- not used, generates a reserved '0' bit
+	option3	NULL OPTIONAL, -- not used, generates a reserved '0' bit
+	option4	NULL OPTIONAL, -- not used, generates a reserved '0' bit
+	option5	NULL OPTIONAL, -- not used, generates a reserved '0' bit
+	option6	NULL OPTIONAL, -- not used, generates a reserved '0' bit
+	option7	NULL OPTIONAL, -- not used, generates a reserved '0' bit
+	extensions	ChannelInfoExts OPTIONAL
+} -- this is the one octet "Channel Info Option Indicator"
+
+--
+-- Channel Info optional WAVE Information Element Extension
+-- See subclause 8.2.4.8
+--
+ChannelInfoExts ::= SEQUENCE OF ChannelInfoExt
+
+ChannelInfoExt ::= Extension {{ChannelInfoExtTypes}}
+
+--
+-- Specifications for each of the following extension types
+-- is found in the ASN.1 module Ieee1609Dot3Wee specified in Annex J
+--
+ChannelInfoExtTypes EXT-TYPE ::= {
+	{ EdcaParameterSet	IDENTIFIED BY c-EDCAparameterSet } |
+	{ ChannelAccess80211 IDENTIFIED BY c-ChannelAccess },
+	...
+}
+
+-- 
+-- RoutingAdvertisement specifies the optional WAVE Router
+-- Advertisement (WRA) as described in subclause 8.2.5
+--
+RoutingAdvertisement ::= SEQUENCE {
+	lifetime	RouterLifetime,
+       -- Router Lifetime, see subclause 8.2.5.2
+	ipPrefix	IpV6Prefix,
+      -- IP Prefix, see subclause 8.2.5.3
+	ipPrefixLength	IpV6PrefixLength,
+       -- Prefix Length, see subclause 8.2.5.4
+	defaultGateway	IPv6Address,
+       -- Default Gateway, see subclause 8.2.5.5
+	primaryDns	IPv6Address,
+       -- Primary domain name system (DNS), see subclause 8.2.5.6
+	extensions	RoutAdvertExts
+       -- WRA optional WAVE Info Element Extension, 
+       -- see subclause 8.2.5.7
+}
+
+RouterLifetime ::= INTEGER (0..65535)
+
+IpV6Prefix ::= OCTET STRING (SIZE (16))
+
+IpV6PrefixLength ::= INTEGER (0..255)
+
+--
+-- WRA optional WAVE Information Element Extension
+-- See subclause 8.2.5.7
+--
+RoutAdvertExts ::= SEQUENCE OF RoutAdvertExt
+
+RoutAdvertExt ::= Extension {{RoutAdvertExtTypes}}
+
+--
+-- Specifications for each of the following extension types
+-- is found in the ASN.1 module Ieee1609Dot3Wee specified in Annex J
+--
+RoutAdvertExtTypes EXT-TYPE ::= {
+	{ SecondaryDns	 IDENTIFIED BY c-SecondaryDNS } |
+	{ GatewayMacAddress	 IDENTIFIED BY c-GatewayMACaddress },
+	...
+}
+
+END

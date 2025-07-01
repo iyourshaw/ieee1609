@@ -1,0 +1,106 @@
+{
+    "protocolVersion": 3,
+    "content": {
+        "signedData": {
+            "hashId": "sha256",
+            "tbsData": {
+                "payload": {
+                    "data": {
+                        "protocolVersion": 3,
+                        "content": {
+                            "unsecuredData": "0013809D419903038560ECE1A77654123BF9409904541370E9DC829F40BC4FE043019903D78B0F0010434097A09F1001021A04BD051E000C11902570274C0080868166D17F00050434095C09D3003021A04BD051E001C10D02CDA2FE001008C812B813A600C0464095C09D3007021A059B45FC004010D025E828F002408C812B813A60CA0434097A0A3C066021A059B45FC033810D025E828F01A0086816D018B8"
+                        }
+                    }
+                },
+                "headerInfo": {
+                    "psid": 130,
+                    "generationTime": 637434485748149,
+                    "generationLocation": {
+                        "latitude": 403766460,
+                        "longitude": -1117960696,
+                        "elevation": 14120
+                    }
+                }
+            },
+            "signer": {
+                "certificate": [
+                    {
+                        "version": 3,
+                        "type": "implicit",
+                        "issuer": {
+                            "sha256AndDigest": "C620FB90CAAD3B9C"
+                        },
+                        "toBeSigned": {
+                            "id": {
+                                "binaryId": "4C06B6DE4F8C6385"
+                            },
+                            "cracaId": "396921",
+                            "crlSeries": 3,
+                            "validityPeriod": {
+                                "start": 637007767,
+                                "duration": {
+                                    "minutes": 10140
+                                }
+                            },
+                            "region": {
+                                "identifiedRegion": [
+                                    {
+                                        "countryOnly": 840
+                                    }
+                                ]
+                            },
+                            "appPermissions": [
+                                {
+                                    "psid": 2113685,
+                                    "ssp": {
+                                        "opaque": "000001E040"
+                                    }
+                                },
+                                {
+                                    "psid": 2113687,
+                                    "ssp": {
+                                        "opaque": "0080012040"
+                                    }
+                                },
+                                {
+                                    "psid": 130,
+                                    "ssp": {
+                                        "opaque": "0080013040"
+                                    }
+                                },
+                                {
+                                    "psid": 131,
+                                    "ssp": {
+                                        "opaque": "008001F040"
+                                    }
+                                },
+                                {
+                                    "psid": 135
+                                },
+                                {
+                                    "psid": 38
+                                },
+                                {
+                                    "psid": 128
+                                }
+                            ],
+                            "verifyKeyIndicator": {
+                                "reconstructionValue": {
+                                    "compressed-y-1": "8EA44E6C6D5EB938586A0866B3B4E0B247BC21FAEA7B4AA594471D1678EF7809"
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            "signature": {
+                "ecdsaNistP256Signature": {
+                    "rSig": {
+                        "compressed-y-1": "FFD5D7D41F24FFB602D2DA141961E6360C3DB409A954F6F5E35545E7FCC64E22"
+                    },
+                    "sSig": "F10D76BF042962098BCDF718EB5AE3CC066B6F0324D361632C4C6D554A4AF1EC"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,109 @@
+<ShortMsgNpdu>
+    <subtype>
+        <nullNetworking>
+            <version>3</version>
+            <nExtensions>
+                <ShortMsgNextension>
+                    <extensionId>4</extensionId>
+                    <value>
+                        <TXpower80211>20</TXpower80211>
+                    </value>
+                </ShortMsgNextension>
+                <ShortMsgNextension>
+                    <extensionId>15</extensionId>
+                    <value>
+                        <ChannelNumber80211>180</ChannelNumber80211>
+                    </value>
+                </ShortMsgNextension>
+                <ShortMsgNextension>
+                    <extensionId>16</extensionId>
+                    <value>
+                        <DataRate80211>12</DataRate80211>
+                    </value>
+                </ShortMsgNextension>
+            </nExtensions>
+        </nullNetworking>
+    </subtype>
+    <transport>
+        <bcMode>
+            <addrInfo>
+                <content>32</content>
+            </addrInfo>
+        </bcMode>
+    </transport>
+    <body>
+        03 81 00 40 03 80 5A 00 14 57 45 EB 54 59 EC 62 
+        F6 26 D0 73 FA 1C CE 36 88 8D 3B 80 00 00 00 70 
+        3D 15 C6 FD 75 87 CA B0 80 09 80 00 64 0E B0 00 
+        C0 C0 81 17 FB 55 08 0F D2 40 2C 11 98 FD 6B 76 
+        FD 24 20 C1 1C D5 DA B6 4F CA 47 02 11 F4 25 D4 
+        54 FC 84 B3 A1 22 5E E0 39 4F C4 50 62 C6 54 C2 
+        00 40 01 20 00 02 46 7C 71 1A 10 F6 80 25 4E B7 
+        5C 3A DA 37 D5 80 83 CA 79 24 23 EC 5F 67 16 15 
+        1E ED AD 6E 78 B4 D9 AF 19 ED A3 9F 5D 7A 1A 30 
+        53 86 F5 6A 08 59 EA A9 36 42 5C CF 73 2A 34 5E 
+        80 A4 B5 60 B8 96 81 FD D2 32 85 FD BB 45 1C 9D 
+        61 46 27 1E 6D A3 0F
+    </body>
+</ShortMsgNpdu>
+<ShortMsgNpdu>
+    <subtype>
+        <subTypeReserved15>
+            <optBit>
+                1
+            </optBit>
+            <version>5</version>
+        </subTypeReserved15>
+    </subtype>
+    <transport>
+        <tpidReserved85>
+            0
+        </tpidReserved85>
+    </transport>
+    <body>
+        42 0B 03 04 01 94 0F 01 B4 10 01 0C 00 20 80 B7 
+        03 81 00 40 03 80 5A 00 14 57 45
+    </body>
+</ShortMsgNpdu>
+<ShortMsgNpdu>
+    <subtype>
+        <subTypeReserved14>
+            <optBit>
+                1
+            </optBit>
+            <version>3</version>
+        </subTypeReserved14>
+    </subtype>
+    <transport>
+        <tpidReserved42>
+            0
+        </tpidReserved42>
+    </transport>
+    <body>
+        EC 62 F6 26 D0 73 FA 1C CE 36 88 8D 3B 80 00 00 
+        00 70 3D 15 C6 FD 75 87 CA B0 80 09 80 00 64 0E 
+        B0 00 C0 C0 81 17 FB 55 08 0F D2 40 2C 11 98 FD 
+        6B 76 FD 24 20 C1 1C D5 DA B6 4F CA 47 02 11 F4 
+        25 D4 54 FC 84 B3 A1 22 5E E0 39 4F C4 50 62 C6 
+        54 C2 00 40 01 20 00 02 46
+    </body>
+</ShortMsgNpdu>
+<ShortMsgNpdu>
+    <subtype>
+        <subTypeReserved7>
+            <optBit>
+                1
+            </optBit>
+            <version>4</version>
+        </subTypeReserved7>
+    </subtype>
+    <transport>
+        <tpidReserved56>
+            1
+        </tpidReserved56>
+    </transport>
+    <body>
+        10 F6 80 25 4E B7 5C 3A DA 37 D5 80 83 CA 79 24 
+        23 EC 5F 67 16 15 1E ED AD 6E
+    </body>
+</ShortMsgNpdu>

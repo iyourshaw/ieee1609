@@ -1,0 +1,84 @@
+
+Ieee1609Dot3Wsa1609Dot2Encapsulation {iso(1) identified-organization(3) ieee(111) 
+standards-association-numbered-series-standards(2) wave-stds(1609)  
+dot3(3) wsa(5) 1609dot2-encapsulation(1) major-version-3(3)}
+
+DEFINITIONS AUTOMATIC TAGS ::= BEGIN 
+
+EXPORTS ALL;
+ 
+IMPORTS
+  Psid
+FROM IEEE1609dot2BaseTypes {iso(1) identified-organization(3) ieee(111) 
+  standards-association-numbered-series-standards(2) wave-stds(1609) dot2(2)
+  base(1) base-types(2) major-version-2(2)}
+
+  Ieee1609Dot2Data,
+  SequenceOfCertificate,
+  SignerIdentifier
+FROM IEEE1609dot2 {iso(1) identified-organization(3) ieee(111) 
+  standards-association-numbered-series-standards(2) wave-stds(1609)  
+  dot2(2) base (1) schema (1) major-version-2(2)}
+
+;
+
+  WsaPsid ::= Psid (135)
+
+  Ieee1609Dot2EncapsulatedWsa ::=
+   Ieee1609Dot2Data (
+      Ieee1609Dot2EncapsulatedSignedWsa |
+      Ieee1609Dot2EncapsulatedUnsecuredWsa
+   )
+
+
+
+
+  Ieee1609Dot2EncapsulatedUnsecuredWsa ::= Ieee1609Dot2Data (WITH COMPONENTS {
+    content (WITH COMPONENTS {
+      ...,
+      unsecuredData  -- containing encoded WSA
+    })
+  })
+
+  Ieee1609Dot2EncapsulatedSignedWsa ::= 
+    Ieee1609Dot2Data (WITH COMPONENTS {
+    ...,
+    content (WITH COMPONENTS {
+      ...,
+      signedData (WITH COMPONENTS {
+        ...,
+        tbsData (WITH COMPONENTS {
+          ...,
+          payload (WITH COMPONENTS {
+            ...,
+            data (WITH COMPONENTS {
+              ...,
+              content (WITH COMPONENTS {
+                unsecuredData -- containing encoded WSA
+              })
+            })
+          }),
+          headerInfo (WITH COMPONENTS {
+            ...,
+            psid (WsaPsid),
+            generationTime PRESENT,
+            expiryTime ABSENT,
+            generationLocation ABSENT,
+            p2pcdLearningRequest ABSENT,
+            missingCrlIdentifier ABSENT,
+            encryptionKey ABSENT
+          })
+        }),
+        signer (SignerSingleCert)
+      })
+    })
+  })
+
+  SignerSingleCert ::= SignerIdentifier(WITH COMPONENTS {
+    certificate (SequenceOfCertificate (SIZE (1)))
+  })
+
+
+
+
+END

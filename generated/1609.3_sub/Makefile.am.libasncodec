@@ -1,0 +1,1077 @@
+ASN_MODULE_SRCS=	\
+	IEEE1609dot2-Peer2Peer_Ieee1609dot2Peer2PeerPDU.c	\
+	IEEE1609dot2-Peer2Peer_CaCertP2pPDU.c	\
+	IEEE1609dot2BaseTypes_Uint3.c	\
+	IEEE1609dot2BaseTypes_Uint8.c	\
+	IEEE1609dot2BaseTypes_Uint16.c	\
+	IEEE1609dot2BaseTypes_Uint32.c	\
+	IEEE1609dot2BaseTypes_Uint64.c	\
+	IEEE1609dot2BaseTypes_SequenceOfUint8.c	\
+	IEEE1609dot2BaseTypes_SequenceOfUint16.c	\
+	IEEE1609dot2BaseTypes_Opaque.c	\
+	IEEE1609dot2BaseTypes_HashedId3.c	\
+	IEEE1609dot2BaseTypes_HashedId8.c	\
+	IEEE1609dot2BaseTypes_HashedId10.c	\
+	IEEE1609dot2BaseTypes_SequenceOfHashedId3.c	\
+	IEEE1609dot2BaseTypes_Time32.c	\
+	IEEE1609dot2BaseTypes_Time64.c	\
+	IEEE1609dot2BaseTypes_ValidityPeriod.c	\
+	IEEE1609dot2BaseTypes_Duration.c	\
+	IEEE1609dot2BaseTypes_GeographicRegion.c	\
+	IEEE1609dot2BaseTypes_CircularRegion.c	\
+	IEEE1609dot2BaseTypes_RectangularRegion.c	\
+	IEEE1609dot2BaseTypes_SequenceOfRectangularRegion.c	\
+	IEEE1609dot2BaseTypes_PolygonalRegion.c	\
+	IEEE1609dot2BaseTypes_TwoDLocation.c	\
+	IEEE1609dot2BaseTypes_IdentifiedRegion.c	\
+	IEEE1609dot2BaseTypes_SequenceOfIdentifiedRegion.c	\
+	IEEE1609dot2BaseTypes_CountryOnly.c	\
+	IEEE1609dot2BaseTypes_CountryAndRegions.c	\
+	IEEE1609dot2BaseTypes_CountryAndSubregions.c	\
+	IEEE1609dot2BaseTypes_RegionAndSubregions.c	\
+	IEEE1609dot2BaseTypes_SequenceOfRegionAndSubregions.c	\
+	IEEE1609dot2BaseTypes_ThreeDLocation.c	\
+	IEEE1609dot2BaseTypes_Latitude.c	\
+	IEEE1609dot2BaseTypes_Longitude.c	\
+	IEEE1609dot2BaseTypes_Elevation.c	\
+	IEEE1609dot2BaseTypes_NinetyDegreeInt.c	\
+	IEEE1609dot2BaseTypes_KnownLatitude.c	\
+	IEEE1609dot2BaseTypes_UnknownLatitude.c	\
+	IEEE1609dot2BaseTypes_OneEightyDegreeInt.c	\
+	IEEE1609dot2BaseTypes_KnownLongitude.c	\
+	IEEE1609dot2BaseTypes_UnknownLongitude.c	\
+	IEEE1609dot2BaseTypes_Signature.c	\
+	IEEE1609dot2BaseTypes_EcdsaP256Signature.c	\
+	IEEE1609dot2BaseTypes_EcdsaP384Signature.c	\
+	IEEE1609dot2BaseTypes_EccP256CurvePoint.c	\
+	IEEE1609dot2BaseTypes_EccP384CurvePoint.c	\
+	IEEE1609dot2BaseTypes_SymmAlgorithm.c	\
+	IEEE1609dot2BaseTypes_HashAlgorithm.c	\
+	IEEE1609dot2BaseTypes_EciesP256EncryptedKey.c	\
+	IEEE1609dot2BaseTypes_EncryptionKey.c	\
+	IEEE1609dot2BaseTypes_PublicEncryptionKey.c	\
+	IEEE1609dot2BaseTypes_BasePublicEncryptionKey.c	\
+	IEEE1609dot2BaseTypes_PublicVerificationKey.c	\
+	IEEE1609dot2BaseTypes_SymmetricEncryptionKey.c	\
+	IEEE1609dot2BaseTypes_PsidSsp.c	\
+	IEEE1609dot2BaseTypes_SequenceOfPsidSsp.c	\
+	IEEE1609dot2BaseTypes_Psid.c	\
+	IEEE1609dot2BaseTypes_SequenceOfPsid.c	\
+	IEEE1609dot2BaseTypes_ServiceSpecificPermissions.c	\
+	IEEE1609dot2BaseTypes_BitmapSsp.c	\
+	IEEE1609dot2BaseTypes_PsidSspRange.c	\
+	IEEE1609dot2BaseTypes_SequenceOfPsidSspRange.c	\
+	IEEE1609dot2BaseTypes_SspRange.c	\
+	IEEE1609dot2BaseTypes_BitmapSspRange.c	\
+	IEEE1609dot2BaseTypes_SequenceOfOctetString.c	\
+	IEEE1609dot2BaseTypes_SubjectAssurance.c	\
+	IEEE1609dot2BaseTypes_CrlSeries.c	\
+	IEEE1609dot2BaseTypes_IValue.c	\
+	IEEE1609dot2BaseTypes_Hostname.c	\
+	IEEE1609dot2BaseTypes_LinkageValue.c	\
+	IEEE1609dot2BaseTypes_GroupLinkageValue.c	\
+	IEEE1609dot2BaseTypes_LaId.c	\
+	IEEE1609dot2BaseTypes_LinkageSeed.c	\
+	IEEE1609dot2_SignedDataPayload.c	\
+	IEEE1609dot2_Ieee1609Dot2Data.c	\
+	IEEE1609dot2_Ieee1609Dot2Content.c	\
+	IEEE1609dot2_SignedData.c	\
+	IEEE1609dot2_SignerIdentifier.c	\
+	IEEE1609dot2_ToBeSignedData.c	\
+	IEEE1609dot2_HashedData.c	\
+	IEEE1609dot2_HeaderInfo.c	\
+	IEEE1609dot2_MissingCrlIdentifier.c	\
+	IEEE1609dot2_Countersignature.c	\
+	IEEE1609dot2_EncryptedData.c	\
+	IEEE1609dot2_RecipientInfo.c	\
+	IEEE1609dot2_SequenceOfRecipientInfo.c	\
+	IEEE1609dot2_PreSharedKeyRecipientInfo.c	\
+	IEEE1609dot2_SymmRecipientInfo.c	\
+	IEEE1609dot2_PKRecipientInfo.c	\
+	IEEE1609dot2_EncryptedDataEncryptionKey.c	\
+	IEEE1609dot2_SymmetricCiphertext.c	\
+	IEEE1609dot2_AesCcmCiphertext.c	\
+	IEEE1609dot2_Certificate.c	\
+	IEEE1609dot2_TestCertificate.c	\
+	IEEE1609dot2_SequenceOfCertificate.c	\
+	IEEE1609dot2_CertificateBase.c	\
+	IEEE1609dot2_CertificateType.c	\
+	IEEE1609dot2_ImplicitCertificate.c	\
+	IEEE1609dot2_ExplicitCertificate.c	\
+	IEEE1609dot2_IssuerIdentifier.c	\
+	IEEE1609dot2_ToBeSignedCertificate.c	\
+	IEEE1609dot2_CertificateId.c	\
+	IEEE1609dot2_LinkageData.c	\
+	IEEE1609dot2_EndEntityType.c	\
+	IEEE1609dot2_PsidGroupPermissions.c	\
+	IEEE1609dot2_SequenceOfPsidGroupPermissions.c	\
+	IEEE1609dot2_SubjectPermissions.c	\
+	IEEE1609dot2_VerificationKeyIndicator.c	\
+	EUTRA-RRC-Definitions_SL-DestinationInfoList-r12.c	\
+	EUTRA-RRC-Definitions_SL-DestinationIdentity-r12.c	\
+	EUTRA-RRC-Definitions_P-Max.c	\
+	EUTRA-RRC-Definitions_TDD-ConfigSL-r12.c	\
+	EUTRA-RRC-Definitions_AdditionalSpectrumEmission.c	\
+	EUTRA-RRC-Definitions_AdditionalSpectrumEmission-v10l0.c	\
+	EUTRA-RRC-Definitions_ARFCN-ValueEUTRA-r9.c	\
+	EUTRA-RRC-Definitions_ARFCN-ValueNR-r15.c	\
+	EUTRA-RRC-Definitions_Q-RxLevMin.c	\
+	EUTRA-RRC-Definitions_RSRP-RangeSL3-r12.c	\
+	EUTRA-RRC-Definitions_FilterCoefficient.c	\
+	EUTRA-RRC-Definitions_SL-AnchorCarrierFreqList-V2X-r14.c	\
+	EUTRA-RRC-Definitions_SL-CBR-Levels-Config-r14.c	\
+	EUTRA-RRC-Definitions_SL-CBR-PSSCH-TxConfig-r14.c	\
+	EUTRA-RRC-Definitions_SL-CBR-r14.c	\
+	EUTRA-RRC-Definitions_MCS-PSSCH-Range-r15.c	\
+	EUTRA-RRC-Definitions_SL-MinT2ValueList-r15.c	\
+	EUTRA-RRC-Definitions_SL-MinT2Value-r15.c	\
+	EUTRA-RRC-Definitions_SL-CommTxPoolSensingConfig-r14.c	\
+	EUTRA-RRC-Definitions_SL-NR-AnchorCarrierFreqList-r16.c	\
+	EUTRA-RRC-Definitions_SL-OffsetIndicator-r12.c	\
+	EUTRA-RRC-Definitions_SL-OffsetIndicatorSync-r14.c	\
+	EUTRA-RRC-Definitions_SL-P2X-ResourceSelectionConfig-r14.c	\
+	EUTRA-RRC-Definitions_SL-PriorityList-r13.c	\
+	EUTRA-RRC-Definitions_SL-Priority-r13.c	\
+	EUTRA-RRC-Definitions_SL-PSSCH-TxConfigList-r14.c	\
+	EUTRA-RRC-Definitions_SL-PSSCH-TxConfig-r14.c	\
+	EUTRA-RRC-Definitions_SL-PSSCH-TxParameters-r14.c	\
+	EUTRA-RRC-Definitions_SL-PSSCH-TxParameters-v1530.c	\
+	EUTRA-RRC-Definitions_SL-Reliability-r15.c	\
+	EUTRA-RRC-Definitions_SL-RestrictResourceReservationPeriodList-r14.c	\
+	EUTRA-RRC-Definitions_SL-RestrictResourceReservationPeriod-r14.c	\
+	EUTRA-RRC-Definitions_SL-SyncAllowed-r14.c	\
+	EUTRA-RRC-Definitions_SubframeBitmapSL-r12.c	\
+	EUTRA-RRC-Definitions_SubframeBitmapSL-r14.c	\
+	EUTRA-RRC-Definitions_SL-TxPower-r14.c	\
+	EUTRA-RRC-Definitions_SL-TypeTxSync-r14.c	\
+	EUTRA-RRC-Definitions_SL-ThresPSSCH-RSRP-List-r14.c	\
+	EUTRA-RRC-Definitions_SL-ThresPSSCH-RSRP-r14.c	\
+	EUTRA-RRC-Definitions_P0-SL-r12.c	\
+	EUTRA-RRC-Definitions_SL-TxPoolIdentity-r12.c	\
+	EUTRA-RRC-Definitions_SL-V2X-FreqSelectionConfigList-r15.c	\
+	EUTRA-RRC-Definitions_SL-V2X-FreqSelectionConfig-r15.c	\
+	EUTRA-RRC-Definitions_SL-V2X-PacketDuplicationConfig-r15.c	\
+	EUTRA-RRC-Definitions_SL-PPPR-Dest-CarrierFreqList-r15.c	\
+	EUTRA-RRC-Definitions_SL-PPPR-Dest-CarrierFreq.c	\
+	EUTRA-RRC-Definitions_SL-AllowedCarrierFreqList-r15.c	\
+	EUTRA-RRC-Definitions_SL-V2X-SyncFreqList-r15.c	\
+	EUTRA-RRC-Definitions_SL-ZoneConfig-r14.c	\
+	EUTRA-Sidelink-Preconf_SL-PreconfigGeneral-r12.c	\
+	EUTRA-Sidelink-Preconf_SL-V2X-Preconfiguration-r14.c	\
+	EUTRA-Sidelink-Preconf_SL-CBR-PreconfigTxConfigList-r14.c	\
+	EUTRA-Sidelink-Preconf_SL-V2X-PreconfigFreqList-r14.c	\
+	EUTRA-Sidelink-Preconf_SL-V2X-PreconfigFreqInfo-r14.c	\
+	EUTRA-Sidelink-Preconf_SL-PreconfigV2X-RxPoolList-r14.c	\
+	EUTRA-Sidelink-Preconf_SL-PreconfigV2X-TxPoolList-r14.c	\
+	EUTRA-Sidelink-Preconf_SL-V2X-PreconfigCommPool-r14.c	\
+	EUTRA-Sidelink-Preconf_SL-PreconfigV2X-Sync-r14.c	\
+	EUTRA-Sidelink-Preconf_SL-V2X-SyncOffsetIndicators-r14.c	\
+	EUTRA-Sidelink-Preconf_SL-CBR-PPPP-TxPreconfigList-r14.c	\
+	EUTRA-Sidelink-Preconf_SL-PPPP-TxPreconfigIndex-r14.c	\
+	EUTRA-Sidelink-Preconf_Tx-PreconfigIndex-r14.c	\
+	EUTRA-Sidelink-Preconf_SL-CBR-PPPP-TxPreconfigList-v1530.c	\
+	EUTRA-Sidelink-Preconf_SL-PPPP-TxPreconfigIndex-v1530.c	\
+	EUTRA-Sidelink-Preconf_SL-V2X-TxProfileList-r15.c	\
+	EUTRA-Sidelink-Preconf_SL-V2X-TxProfile-r15.c	\
+	EtsiTs102941Crl_EtsiTs102941CaCrlContents.c	\
+	EtsiTs102941Crl_EtsiTs102941CaCrl.c	\
+	Ieee1609Dot3Wee_VarLengthNumber.c	\
+	Ieee1609Dot3Wee_Ext1.c	\
+	Ieee1609Dot3Wee_Ext2.c	\
+	Ieee1609Dot3Wee_Ext3.c	\
+	Extension.c	\
+	Ieee1609Dot3Wee_RefExt.c	\
+	Ieee1609Dot3Wee_DataRate80211.c	\
+	Ieee1609Dot3Wee_TXpower80211.c	\
+	Ieee1609Dot3Wee_ChannelNumber80211.c	\
+	Ieee1609Dot3Wee_CompactTimeConfidence.c	\
+	Ieee1609Dot3Wee_RepeatRate.c	\
+	Ieee1609Dot3Wee_TwoDLocation.c	\
+	Ieee1609Dot3Wee_ThreeDLocation.c	\
+	Ieee1609Dot3Wee_AdvertiserIdentifier.c	\
+	Ieee1609Dot3Wee_LTEv2xChannelInfo.c	\
+	Ieee1609Dot3Wee_MaxDataRateBytesPerSec.c	\
+	Ieee1609Dot3Wee_MinimumTrafficPeriodicity.c	\
+	Ieee1609Dot3Wee_ProtocolType.c	\
+	Ieee1609Dot3Wee_ApplicationData.c	\
+	Ieee1609Dot3Wee_AssertedBySASigner.c	\
+	Ieee1609Dot3Wee_ProviderServiceContext.c	\
+	Ieee1609Dot3Wee_IPv6Address.c	\
+	Ieee1609Dot3Wee_ServicePort.c	\
+	Ieee1609Dot3Wee_ProviderMacAddress.c	\
+	Ieee1609Dot3Wee_MACaddress.c	\
+	Ieee1609Dot3Wee_RcpiThreshold.c	\
+	Ieee1609Dot3Wee_WsaCountThreshold.c	\
+	Ieee1609Dot3Wee_WsaCountThresholdInterval.c	\
+	Ieee1609Dot3Wee_EdcaParameterSet.c	\
+	Ieee1609Dot3Wee_EdcaParameterRecord.c	\
+	Ieee1609Dot3Wee_ChannelAccess80211.c	\
+	Ieee1609Dot3Wee_SecondaryDns.c	\
+	Ieee1609Dot3Wee_GatewayMacAddress.c	\
+	Ieee1609Dot3Wee_Latitude.c	\
+	Ieee1609Dot3Wee_Longitude.c	\
+	Ieee1609Dot3Wee_Elevation.c	\
+	Ieee1609Dot3Wsa_SrvAdvMsg.c	\
+	Ieee1609Dot3Wsa_RsvAdvPrtVersion.c	\
+	Ieee1609Dot3Wsa_SrvAdvBody.c	\
+	Ieee1609Dot3Wsa_SrvAdvChangeCount.c	\
+	Ieee1609Dot3Wsa_SrvAdvID.c	\
+	Ieee1609Dot3Wsa_SrvAdvContentCount.c	\
+	Ieee1609Dot3Wsa_SrvAdvMsgHeaderExts.c	\
+	Ieee1609Dot3Wsa_SrvAdvMsgHeaderExt.c	\
+	Ieee1609Dot3Wsa_ExtendedChannelInfos.c	\
+	Ieee1609Dot3Wsa_ExtendedChannelInfo.c	\
+	Ieee1609Dot3Wsa_MedType.c	\
+	Ieee1609Dot3Wsa_ServiceInfos.c	\
+	Ieee1609Dot3Wsa_ServiceInfo.c	\
+	Ieee1609Dot3Wsa_ChannelOptions.c	\
+	Ieee1609Dot3Wsa_ChannelIndex.c	\
+	Ieee1609Dot3Wsa_ServiceInfoExts.c	\
+	Ieee1609Dot3Wsa_ServiceInfoExt.c	\
+	Ieee1609Dot3Wsa_ChannelInfos.c	\
+	Ieee1609Dot3Wsa_ChannelInfo.c	\
+	Ieee1609Dot3Wsa_OperatingClass80211.c	\
+	Ieee1609Dot3Wsa_WsaChInfoDataRate.c	\
+	Ieee1609Dot3Wsa_ChInfoOptions.c	\
+	Ieee1609Dot3Wsa_ChannelInfoExts.c	\
+	Ieee1609Dot3Wsa_ChannelInfoExt.c	\
+	Ieee1609Dot3Wsa_RoutingAdvertisement.c	\
+	Ieee1609Dot3Wsa_RouterLifetime.c	\
+	Ieee1609Dot3Wsa_IpV6Prefix.c	\
+	Ieee1609Dot3Wsa_IpV6PrefixLength.c	\
+	Ieee1609Dot3Wsa_RoutAdvertExts.c	\
+	Ieee1609Dot3Wsa_RoutAdvertExt.c	\
+	Ieee1609Dot3Wsa1609Dot2Encapsulation_WsaPsid.c	\
+	Ieee1609Dot3Wsa1609Dot2Encapsulation_Ieee1609Dot2EncapsulatedWsa.c	\
+	Ieee1609Dot3Wsa1609Dot2Encapsulation_Ieee1609Dot2EncapsulatedUnsecuredWsa.c	\
+	Ieee1609Dot3Wsa1609Dot2Encapsulation_Ieee1609Dot2EncapsulatedSignedWsa.c	\
+	Ieee1609Dot3Wsa1609Dot2Encapsulation_SignerSingleCert.c	\
+	Ieee1609Dot3WsaSsp_WsaSsp.c	\
+	Ieee1609Dot3WsaSsp_AdvertiserPermissions.c	\
+	Ieee1609Dot3WsaSsp_ChannelIdentifier.c	\
+	Ieee1609Dot3WsaSsp_ProviderPermissions.c	\
+	Ieee1609Dot3WsaSsp_ChannelSpecificProviderPermission.c	\
+	Ieee1609Dot3WsaSsp_EdcaIdentifier.c	\
+	Ieee1609Dot3WsaSsp_EnumeratedEdcaIdentifier.c	\
+	Ieee1609Dot3WsaSsp_ExplicitEdcaIdentifier.c	\
+	Ieee1609Dot3WsaSsp_SequenceOfEdcaIdentifier.c	\
+	Ieee1609Dot3Wsm_ShortMsgNpdu.c	\
+	Ieee1609Dot3Wsm_ShortMsgSubtype.c	\
+	Ieee1609Dot3Wsm_NoSubtypeProcessing.c	\
+	Ieee1609Dot3Wsm_ShortMsgVersion.c	\
+	Ieee1609Dot3Wsm_NullNetworking.c	\
+	Ieee1609Dot3Wsm_ShortMsgNextensions.c	\
+	Ieee1609Dot3Wsm_ShortMsgNextension.c	\
+	Ieee1609Dot3Wsm_ShortMsgTpdus.c	\
+	Ieee1609Dot3Wsm_NoTpidProcessing.c	\
+	Ieee1609Dot3Wsm_ShortMsgBcPDU.c	\
+	Ieee1609Dot3Wsm_ShortMsgData.c	\
+	Ieee1609Dot3Wsm_ShortMsgTexts.c	\
+	Ieee1609Dot3Wsm_ShortMsgText.c	\
+	Ieee1609Dot3Wsm_DummyExtension.c	\
+	Ieee1609Dot2Dot1AcaEeInterface_AcaEeInterfacePdu.c	\
+	Ieee1609Dot2Dot1AcaEeInterface_AcaEeCertResponse.c	\
+	Ieee1609Dot2Dot1AcaLaInterface_AcaLaInterfacePdu.c	\
+	Ieee1609Dot2Dot1AcaMaInterface_AcaMaInterfacePdu.c	\
+	Ieee1609Dot2Dot1AcaRaInterface_AcaRaInterfacePdu.c	\
+	Ieee1609Dot2Dot1AcaRaInterface_RaAcaCertRequest.c	\
+	Ieee1609Dot2Dot1AcaRaInterface_RaAcaCertRequestFlags.c	\
+	Ieee1609Dot2Dot1AcaRaInterface_LinkageInfo.c	\
+	Ieee1609Dot2Dot1AcaRaInterface_EncryptedIndividualPLV.c	\
+	Ieee1609Dot2Dot1AcaRaInterface_PreLinkageValue.c	\
+	Ieee1609Dot2Dot1AcaRaInterface_AcaRaCertResponse.c	\
+	Ieee1609Dot2Dot1AcaRaInterface_AcaResponse.c	\
+	Ieee1609Dot2Dot1Acpc_AcpcPdu.c	\
+	Ieee1609Dot2Dot1Acpc_AprvBinaryTree.c	\
+	Ieee1609Dot2Dot1Acpc_AcpcPsid.c	\
+	Ieee1609Dot2Dot1Acpc_UnsecuredAprvBinaryTree.c	\
+	Ieee1609Dot2Dot1Acpc_SignedAprvBinaryTree.c	\
+	Ieee1609Dot2Dot1Acpc_IndividualAprv.c	\
+	Ieee1609Dot2Dot1Acpc_SignedIndividualAprv.c	\
+	Ieee1609Dot2Dot1Acpc_AcpcTreeId.c	\
+	Ieee1609Dot2Dot1Acpc_AcpcNodeValue.c	\
+	Ieee1609Dot2Dot1Acpc_AprvHashCalculationInput.c	\
+	Ieee1609Dot2Dot1CamRaInterface_CamRaInterfacePdu.c	\
+	Ieee1609Dot2Dot1CamRaInterface_RaCamBatchRequest.c	\
+	Ieee1609Dot2Dot1CamRaInterface_CamRaBatchResponse.c	\
+	Ieee1609Dot2Dot1CamRaInterface_BlindedKey.c	\
+	Ieee1609Dot2Dot1CertManagement_HashedId32.c	\
+	Ieee1609Dot2Dot1CertManagement_HashedId48.c	\
+	Ieee1609Dot2Dot1CertManagement_CertManagementPdu.c	\
+	Ieee1609Dot2Dot1CertManagement_CompositeCrl.c	\
+	Ieee1609Dot2Dot1CertManagement_CertificateChain.c	\
+	Ieee1609Dot2Dot1CertManagement_MultiSignedCtl.c	\
+	Ieee1609Dot2Dot1CertManagement_Ieee1609dot2dot1MsctlType.c	\
+	Ieee1609Dot2Dot1CertManagement_FullIeeeTbsCtl.c	\
+	Ieee1609Dot2Dot1CertManagement_ElectorGroupId.c	\
+	Ieee1609Dot2Dot1CertManagement_CtlSequenceNumber.c	\
+	Ieee1609Dot2Dot1CertManagement_CtlElectorEntry.c	\
+	Ieee1609Dot2Dot1CertManagement_CtlRootCaEntry.c	\
+	Ieee1609Dot2Dot1CertManagement_ToBeSignedCtlSignature.c	\
+	Ieee1609Dot2Dot1CertManagement_CertificateManagementInfoStatus.c	\
+	Ieee1609Dot2Dot1CertManagement_SequenceOfCtlInfoStatus.c	\
+	Ieee1609Dot2Dot1CertManagement_CtlInfoStatus.c	\
+	Ieee1609Dot2Dot1CertManagement_SequenceOfCrlInfoStatus.c	\
+	Ieee1609Dot2Dot1CertManagement_CrlInfoStatus.c	\
+	Ieee1609Dot2Dot1CertManagement_SequenceOfMaInfoStatus.c	\
+	Ieee1609Dot2Dot1CertManagement_MaInfoStatus.c	\
+	IEEE1609dot2CrlBaseTypes_CrlContents.c	\
+	IEEE1609dot2CrlBaseTypes_CrlPriorityInfo.c	\
+	IEEE1609dot2CrlBaseTypes_ToBeSignedHashIdCrl.c	\
+	IEEE1609dot2CrlBaseTypes_HashBasedRevocationInfo.c	\
+	IEEE1609dot2CrlBaseTypes_SequenceOfHashBasedRevocationInfo.c	\
+	IEEE1609dot2CrlBaseTypes_ToBeSignedLinkageValueCrl.c	\
+	IEEE1609dot2CrlBaseTypes_JMaxGroup.c	\
+	IEEE1609dot2CrlBaseTypes_SequenceOfJMaxGroup.c	\
+	IEEE1609dot2CrlBaseTypes_LAGroup.c	\
+	IEEE1609dot2CrlBaseTypes_SequenceOfLAGroup.c	\
+	IEEE1609dot2CrlBaseTypes_IMaxGroup.c	\
+	IEEE1609dot2CrlBaseTypes_SequenceOfIMaxGroup.c	\
+	IEEE1609dot2CrlBaseTypes_IndividualRevocation.c	\
+	IEEE1609dot2CrlBaseTypes_SequenceOfIndividualRevocation.c	\
+	IEEE1609dot2CrlBaseTypes_GroupCrlEntry.c	\
+	IEEE1609dot2CrlBaseTypes_SequenceOfGroupCrlEntry.c	\
+	IEEE1609dot2Crl_CrlPsid.c	\
+	IEEE1609dot2Crl_SecuredCrl.c	\
+	IEEE1609dot2CrlSsp_CrlSsp.c	\
+	IEEE1609dot2CrlSsp_CracaType.c	\
+	IEEE1609dot2CrlSsp_PermissibleCrls.c	\
+	Ieee1609Dot2Dot1EcaEeInterface_EcaEeInterfacePdu.c	\
+	Ieee1609Dot2Dot1EcaEeInterface_EeEcaCertRequest.c	\
+	Ieee1609Dot2Dot1EcaEeInterface_EcaEeCertResponse.c	\
+	Ieee1609Dot2Dot1EeMaInterface_EeMaInterfacePdu.c	\
+	Ieee1609Dot2Dot1EeRaInterface_EeRaInterfacePdu.c	\
+	Ieee1609Dot2Dot1EeRaInterface_EeRaCertRequest.c	\
+	Ieee1609Dot2Dot1EeRaInterface_AdditionalParams.c	\
+	Ieee1609Dot2Dot1EeRaInterface_ButterflyParamsOriginal.c	\
+	Ieee1609Dot2Dot1EeRaInterface_ButterflyExpansion.c	\
+	Ieee1609Dot2Dot1EeRaInterface_RaEeCertAck.c	\
+	Ieee1609Dot2Dot1EeRaInterface_RaEeCertInfo.c	\
+	Ieee1609Dot2Dot1EeRaInterface_EeRaDownloadRequest.c	\
+	Ieee1609Dot2Dot1LaMaInterface_LaMaInterfacePdu.c	\
+	Ieee1609Dot2Dot1LaRaInterface_LaRaInterfacePdu.c	\
+	Ieee1609Dot2Dot1MaRaInterface_MaRaInterfacePdu.c	\
+	Ieee1609Dot2Dot1Protocol_SecurityMgmtPsid.c	\
+	Ieee1609Dot2Dot1Protocol_ScmsPdu.c	\
+	Ieee1609Dot2Dot1Protocol_PublicVerificationKey.c	\
+	Ieee1609Dot2Dot1Protocol_Signature.c	\
+	Ieee1609Dot2Dot1Protocol_ToBeSignedCertificate.c	\
+	ScmsPdu-Scoped.c	\
+	Ieee1609Dot2Data-Unsecured.c	\
+	Ieee1609Dot2Data-Signed.c	\
+	Ieee1609Dot2Data-Encrypted.c	\
+	Ieee1609Dot2Dot1Protocol_Ieee1609Dot2Data-EncryptedOpen.c	\
+	Ieee1609Dot2Data-SignedCertRequest.c	\
+	Ieee1609Dot2Dot1Protocol_X509Certificate.c	\
+	Ieee1609Dot2Dot1Protocol_SequenceOfX509Certificate.c	\
+	Ieee1609Dot2Dot1Protocol_X509SignerIdentifier.c	\
+	Ieee1609Dot2Data-SignedX509AuthenticatedCertRequest.c	\
+	Ieee1609Dot2Data-SignedEncrypted.c	\
+	Ieee1609Dot2Data-EncryptedSigned.c	\
+	Ieee1609Dot2Data-EncryptedOpenSigned.c	\
+	Ieee1609Dot2Data-SignedEncryptedCertRequest.c	\
+	Ieee1609Dot2Data-SymmEncryptedSingleRecipient.c	\
+	Ieee1609Dot2Dot1Protocol_SignerSingleCert.c	\
+	Ieee1609Dot2Dot1Protocol_SignerSingleX509Cert.c	\
+	Ieee1609Dot2Dot1Protocol_SignerSelf.c	\
+	Ieee1609Dot2Dot1Protocol_ScmsPdu-RaAcaCertRequest.c	\
+	Ieee1609Dot2Dot1Protocol_ScmsPdu-EeEcaCertRequest.c	\
+	Ieee1609Dot2Dot1Protocol_ScmsPdu-EeRaCertRequest.c	\
+	Ieee1609Dot2Dot1Protocol_ScmsPdu-EeRaSuccessorEnrollmentCertRequest.c	\
+	Ieee1609Dot2Dot1Protocol_ScopedCertificateRequest.c	\
+	Ieee1609Dot2Dot1Protocol_SignedCertificateRequest.c	\
+	Ieee1609Dot2Dot1Protocol_SignedX509CertificateRequest.c	\
+	Ieee1609Dot2Dot1Protocol_AcaEeCertResponsePlainSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_AcaEeCertResponsePrivateSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_AcaEeCertResponseCubkSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_RaAcaCertRequestSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_AcaRaCertResponseSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_CompositeCrlSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_CertificateChainSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_MultiSignedCtlSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_CtlSignatureSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_CertificateManagementInformationStatusSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_EeEcaCertRequestSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_EcaEeCertResponseSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_EeRaCertRequestSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_EeRa1609Dot2AuthenticatedCertRequestSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_EeRaX509AuthenticatedCertRequestSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_RaEeCertAckSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_RaEeCertInfoSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_RaEeCertAndAcpcInfoSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_EeRaDownloadRequestPlainSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_EeRaDownloadRequestSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_EeRaSuccessorEnrollmentCertRequestSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_RaEeEnrollmentCertAckSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_EeRaEncryptedSignedMisbehaviorReportSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_EeRaEncryptedMisbehaviorReportSpdu.c	\
+	Ieee1609Dot2Dot1Protocol_AnyMbrPsid.c	\
+	Ieee1609Dot2Dot1Protocol_BaseMbrPsid.c	\
+	Ieee1609Dot2Dot1Protocol_ScmsSsp.c	\
+	Ieee1609Dot2Dot1Protocol_ElectorSsp.c	\
+	Ieee1609Dot2Dot1Protocol_RootCaSsp.c	\
+	Ieee1609Dot2Dot1Protocol_PgSsp.c	\
+	Ieee1609Dot2Dot1Protocol_IcaSsp.c	\
+	Ieee1609Dot2Dot1Protocol_EcaSsp.c	\
+	Ieee1609Dot2Dot1Protocol_AcaSsp.c	\
+	Ieee1609Dot2Dot1Protocol_CrlSignerSsp.c	\
+	Ieee1609Dot2Dot1Protocol_DcmSsp.c	\
+	Ieee1609Dot2Dot1Protocol_LaSsp.c	\
+	Ieee1609Dot2Dot1Protocol_LopSsp.c	\
+	Ieee1609Dot2Dot1Protocol_MaSsp.c	\
+	Ieee1609Dot2Dot1Protocol_RaSsp.c	\
+	Ieee1609Dot2Dot1Protocol_EeSsp.c	\
+	Ieee1609Dot2Dot1Protocol_AcpcSsp.c	\
+	Ieee1609Dot2Dot1Protocol_CamSsp.c	\
+	Ieee1609Dot2Dot1Protocol_DcSsp.c	\
+	ASN1C-UsefulInformationObjectClasses_EXTERNAL.c
+
+ASN_MODULE_HDRS=	\
+	IEEE1609dot2-Peer2Peer_Ieee1609dot2Peer2PeerPDU.h	\
+	IEEE1609dot2-Peer2Peer_CaCertP2pPDU.h	\
+	IEEE1609dot2BaseTypes_Uint3.h	\
+	IEEE1609dot2BaseTypes_Uint8.h	\
+	IEEE1609dot2BaseTypes_Uint16.h	\
+	IEEE1609dot2BaseTypes_Uint32.h	\
+	IEEE1609dot2BaseTypes_Uint64.h	\
+	IEEE1609dot2BaseTypes_SequenceOfUint8.h	\
+	IEEE1609dot2BaseTypes_SequenceOfUint16.h	\
+	IEEE1609dot2BaseTypes_Opaque.h	\
+	IEEE1609dot2BaseTypes_HashedId3.h	\
+	IEEE1609dot2BaseTypes_HashedId8.h	\
+	IEEE1609dot2BaseTypes_HashedId10.h	\
+	IEEE1609dot2BaseTypes_SequenceOfHashedId3.h	\
+	IEEE1609dot2BaseTypes_Time32.h	\
+	IEEE1609dot2BaseTypes_Time64.h	\
+	IEEE1609dot2BaseTypes_ValidityPeriod.h	\
+	IEEE1609dot2BaseTypes_Duration.h	\
+	IEEE1609dot2BaseTypes_GeographicRegion.h	\
+	IEEE1609dot2BaseTypes_CircularRegion.h	\
+	IEEE1609dot2BaseTypes_RectangularRegion.h	\
+	IEEE1609dot2BaseTypes_SequenceOfRectangularRegion.h	\
+	IEEE1609dot2BaseTypes_PolygonalRegion.h	\
+	IEEE1609dot2BaseTypes_TwoDLocation.h	\
+	IEEE1609dot2BaseTypes_IdentifiedRegion.h	\
+	IEEE1609dot2BaseTypes_SequenceOfIdentifiedRegion.h	\
+	IEEE1609dot2BaseTypes_CountryOnly.h	\
+	IEEE1609dot2BaseTypes_CountryAndRegions.h	\
+	IEEE1609dot2BaseTypes_CountryAndSubregions.h	\
+	IEEE1609dot2BaseTypes_RegionAndSubregions.h	\
+	IEEE1609dot2BaseTypes_SequenceOfRegionAndSubregions.h	\
+	IEEE1609dot2BaseTypes_ThreeDLocation.h	\
+	IEEE1609dot2BaseTypes_Latitude.h	\
+	IEEE1609dot2BaseTypes_Longitude.h	\
+	IEEE1609dot2BaseTypes_Elevation.h	\
+	IEEE1609dot2BaseTypes_NinetyDegreeInt.h	\
+	IEEE1609dot2BaseTypes_KnownLatitude.h	\
+	IEEE1609dot2BaseTypes_UnknownLatitude.h	\
+	IEEE1609dot2BaseTypes_OneEightyDegreeInt.h	\
+	IEEE1609dot2BaseTypes_KnownLongitude.h	\
+	IEEE1609dot2BaseTypes_UnknownLongitude.h	\
+	IEEE1609dot2BaseTypes_Signature.h	\
+	IEEE1609dot2BaseTypes_EcdsaP256Signature.h	\
+	IEEE1609dot2BaseTypes_EcdsaP384Signature.h	\
+	IEEE1609dot2BaseTypes_EccP256CurvePoint.h	\
+	IEEE1609dot2BaseTypes_EccP384CurvePoint.h	\
+	IEEE1609dot2BaseTypes_SymmAlgorithm.h	\
+	IEEE1609dot2BaseTypes_HashAlgorithm.h	\
+	IEEE1609dot2BaseTypes_EciesP256EncryptedKey.h	\
+	IEEE1609dot2BaseTypes_EncryptionKey.h	\
+	IEEE1609dot2BaseTypes_PublicEncryptionKey.h	\
+	IEEE1609dot2BaseTypes_BasePublicEncryptionKey.h	\
+	IEEE1609dot2BaseTypes_PublicVerificationKey.h	\
+	IEEE1609dot2BaseTypes_SymmetricEncryptionKey.h	\
+	IEEE1609dot2BaseTypes_PsidSsp.h	\
+	IEEE1609dot2BaseTypes_SequenceOfPsidSsp.h	\
+	IEEE1609dot2BaseTypes_Psid.h	\
+	IEEE1609dot2BaseTypes_SequenceOfPsid.h	\
+	IEEE1609dot2BaseTypes_ServiceSpecificPermissions.h	\
+	IEEE1609dot2BaseTypes_BitmapSsp.h	\
+	IEEE1609dot2BaseTypes_PsidSspRange.h	\
+	IEEE1609dot2BaseTypes_SequenceOfPsidSspRange.h	\
+	IEEE1609dot2BaseTypes_SspRange.h	\
+	IEEE1609dot2BaseTypes_BitmapSspRange.h	\
+	IEEE1609dot2BaseTypes_SequenceOfOctetString.h	\
+	IEEE1609dot2BaseTypes_SubjectAssurance.h	\
+	IEEE1609dot2BaseTypes_CrlSeries.h	\
+	IEEE1609dot2BaseTypes_IValue.h	\
+	IEEE1609dot2BaseTypes_Hostname.h	\
+	IEEE1609dot2BaseTypes_LinkageValue.h	\
+	IEEE1609dot2BaseTypes_GroupLinkageValue.h	\
+	IEEE1609dot2BaseTypes_LaId.h	\
+	IEEE1609dot2BaseTypes_LinkageSeed.h	\
+	IEEE1609dot2_SignedDataPayload.h	\
+	IEEE1609dot2_Ieee1609Dot2Data.h	\
+	IEEE1609dot2_Ieee1609Dot2Content.h	\
+	IEEE1609dot2_SignedData.h	\
+	IEEE1609dot2_SignerIdentifier.h	\
+	IEEE1609dot2_ToBeSignedData.h	\
+	IEEE1609dot2_HashedData.h	\
+	IEEE1609dot2_HeaderInfo.h	\
+	IEEE1609dot2_MissingCrlIdentifier.h	\
+	IEEE1609dot2_Countersignature.h	\
+	IEEE1609dot2_EncryptedData.h	\
+	IEEE1609dot2_RecipientInfo.h	\
+	IEEE1609dot2_SequenceOfRecipientInfo.h	\
+	IEEE1609dot2_PreSharedKeyRecipientInfo.h	\
+	IEEE1609dot2_SymmRecipientInfo.h	\
+	IEEE1609dot2_PKRecipientInfo.h	\
+	IEEE1609dot2_EncryptedDataEncryptionKey.h	\
+	IEEE1609dot2_SymmetricCiphertext.h	\
+	IEEE1609dot2_AesCcmCiphertext.h	\
+	IEEE1609dot2_Certificate.h	\
+	IEEE1609dot2_TestCertificate.h	\
+	IEEE1609dot2_SequenceOfCertificate.h	\
+	IEEE1609dot2_CertificateBase.h	\
+	IEEE1609dot2_CertificateType.h	\
+	IEEE1609dot2_ImplicitCertificate.h	\
+	IEEE1609dot2_ExplicitCertificate.h	\
+	IEEE1609dot2_IssuerIdentifier.h	\
+	IEEE1609dot2_ToBeSignedCertificate.h	\
+	IEEE1609dot2_CertificateId.h	\
+	IEEE1609dot2_LinkageData.h	\
+	IEEE1609dot2_EndEntityType.h	\
+	IEEE1609dot2_PsidGroupPermissions.h	\
+	IEEE1609dot2_SequenceOfPsidGroupPermissions.h	\
+	IEEE1609dot2_SubjectPermissions.h	\
+	IEEE1609dot2_VerificationKeyIndicator.h	\
+	EUTRA-RRC-Definitions_SL-DestinationInfoList-r12.h	\
+	EUTRA-RRC-Definitions_SL-DestinationIdentity-r12.h	\
+	EUTRA-RRC-Definitions_P-Max.h	\
+	EUTRA-RRC-Definitions_TDD-ConfigSL-r12.h	\
+	EUTRA-RRC-Definitions_AdditionalSpectrumEmission.h	\
+	EUTRA-RRC-Definitions_AdditionalSpectrumEmission-v10l0.h	\
+	EUTRA-RRC-Definitions_ARFCN-ValueEUTRA-r9.h	\
+	EUTRA-RRC-Definitions_ARFCN-ValueNR-r15.h	\
+	EUTRA-RRC-Definitions_Q-RxLevMin.h	\
+	EUTRA-RRC-Definitions_RSRP-RangeSL3-r12.h	\
+	EUTRA-RRC-Definitions_FilterCoefficient.h	\
+	EUTRA-RRC-Definitions_SL-AnchorCarrierFreqList-V2X-r14.h	\
+	EUTRA-RRC-Definitions_SL-CBR-Levels-Config-r14.h	\
+	EUTRA-RRC-Definitions_SL-CBR-PSSCH-TxConfig-r14.h	\
+	EUTRA-RRC-Definitions_SL-CBR-r14.h	\
+	EUTRA-RRC-Definitions_MCS-PSSCH-Range-r15.h	\
+	EUTRA-RRC-Definitions_SL-MinT2ValueList-r15.h	\
+	EUTRA-RRC-Definitions_SL-MinT2Value-r15.h	\
+	EUTRA-RRC-Definitions_SL-CommTxPoolSensingConfig-r14.h	\
+	EUTRA-RRC-Definitions_SL-NR-AnchorCarrierFreqList-r16.h	\
+	EUTRA-RRC-Definitions_SL-OffsetIndicator-r12.h	\
+	EUTRA-RRC-Definitions_SL-OffsetIndicatorSync-r14.h	\
+	EUTRA-RRC-Definitions_SL-P2X-ResourceSelectionConfig-r14.h	\
+	EUTRA-RRC-Definitions_SL-PriorityList-r13.h	\
+	EUTRA-RRC-Definitions_SL-Priority-r13.h	\
+	EUTRA-RRC-Definitions_SL-PSSCH-TxConfigList-r14.h	\
+	EUTRA-RRC-Definitions_SL-PSSCH-TxConfig-r14.h	\
+	EUTRA-RRC-Definitions_SL-PSSCH-TxParameters-r14.h	\
+	EUTRA-RRC-Definitions_SL-PSSCH-TxParameters-v1530.h	\
+	EUTRA-RRC-Definitions_SL-Reliability-r15.h	\
+	EUTRA-RRC-Definitions_SL-RestrictResourceReservationPeriodList-r14.h	\
+	EUTRA-RRC-Definitions_SL-RestrictResourceReservationPeriod-r14.h	\
+	EUTRA-RRC-Definitions_SL-SyncAllowed-r14.h	\
+	EUTRA-RRC-Definitions_SubframeBitmapSL-r12.h	\
+	EUTRA-RRC-Definitions_SubframeBitmapSL-r14.h	\
+	EUTRA-RRC-Definitions_SL-TxPower-r14.h	\
+	EUTRA-RRC-Definitions_SL-TypeTxSync-r14.h	\
+	EUTRA-RRC-Definitions_SL-ThresPSSCH-RSRP-List-r14.h	\
+	EUTRA-RRC-Definitions_SL-ThresPSSCH-RSRP-r14.h	\
+	EUTRA-RRC-Definitions_P0-SL-r12.h	\
+	EUTRA-RRC-Definitions_SL-TxPoolIdentity-r12.h	\
+	EUTRA-RRC-Definitions_SL-V2X-FreqSelectionConfigList-r15.h	\
+	EUTRA-RRC-Definitions_SL-V2X-FreqSelectionConfig-r15.h	\
+	EUTRA-RRC-Definitions_SL-V2X-PacketDuplicationConfig-r15.h	\
+	EUTRA-RRC-Definitions_SL-PPPR-Dest-CarrierFreqList-r15.h	\
+	EUTRA-RRC-Definitions_SL-PPPR-Dest-CarrierFreq.h	\
+	EUTRA-RRC-Definitions_SL-AllowedCarrierFreqList-r15.h	\
+	EUTRA-RRC-Definitions_SL-V2X-SyncFreqList-r15.h	\
+	EUTRA-RRC-Definitions_SL-ZoneConfig-r14.h	\
+	EUTRA-Sidelink-Preconf_SL-PreconfigGeneral-r12.h	\
+	EUTRA-Sidelink-Preconf_SL-V2X-Preconfiguration-r14.h	\
+	EUTRA-Sidelink-Preconf_SL-CBR-PreconfigTxConfigList-r14.h	\
+	EUTRA-Sidelink-Preconf_SL-V2X-PreconfigFreqList-r14.h	\
+	EUTRA-Sidelink-Preconf_SL-V2X-PreconfigFreqInfo-r14.h	\
+	EUTRA-Sidelink-Preconf_SL-PreconfigV2X-RxPoolList-r14.h	\
+	EUTRA-Sidelink-Preconf_SL-PreconfigV2X-TxPoolList-r14.h	\
+	EUTRA-Sidelink-Preconf_SL-V2X-PreconfigCommPool-r14.h	\
+	EUTRA-Sidelink-Preconf_SL-PreconfigV2X-Sync-r14.h	\
+	EUTRA-Sidelink-Preconf_SL-V2X-SyncOffsetIndicators-r14.h	\
+	EUTRA-Sidelink-Preconf_SL-CBR-PPPP-TxPreconfigList-r14.h	\
+	EUTRA-Sidelink-Preconf_SL-PPPP-TxPreconfigIndex-r14.h	\
+	EUTRA-Sidelink-Preconf_Tx-PreconfigIndex-r14.h	\
+	EUTRA-Sidelink-Preconf_SL-CBR-PPPP-TxPreconfigList-v1530.h	\
+	EUTRA-Sidelink-Preconf_SL-PPPP-TxPreconfigIndex-v1530.h	\
+	EUTRA-Sidelink-Preconf_SL-V2X-TxProfileList-r15.h	\
+	EUTRA-Sidelink-Preconf_SL-V2X-TxProfile-r15.h	\
+	EtsiTs102941Crl_EtsiTs102941CaCrlContents.h	\
+	EtsiTs102941Crl_EtsiTs102941CaCrl.h	\
+	Ieee1609Dot3Wee_VarLengthNumber.h	\
+	Ieee1609Dot3Wee_Ext1.h	\
+	Ieee1609Dot3Wee_Ext2.h	\
+	Ieee1609Dot3Wee_Ext3.h	\
+	Extension.h	\
+	Ieee1609Dot3Wee_RefExt.h	\
+	Ieee1609Dot3Wee_DataRate80211.h	\
+	Ieee1609Dot3Wee_TXpower80211.h	\
+	Ieee1609Dot3Wee_ChannelNumber80211.h	\
+	Ieee1609Dot3Wee_CompactTimeConfidence.h	\
+	Ieee1609Dot3Wee_RepeatRate.h	\
+	Ieee1609Dot3Wee_TwoDLocation.h	\
+	Ieee1609Dot3Wee_ThreeDLocation.h	\
+	Ieee1609Dot3Wee_AdvertiserIdentifier.h	\
+	Ieee1609Dot3Wee_LTEv2xChannelInfo.h	\
+	Ieee1609Dot3Wee_MaxDataRateBytesPerSec.h	\
+	Ieee1609Dot3Wee_MinimumTrafficPeriodicity.h	\
+	Ieee1609Dot3Wee_ProtocolType.h	\
+	Ieee1609Dot3Wee_ApplicationData.h	\
+	Ieee1609Dot3Wee_AssertedBySASigner.h	\
+	Ieee1609Dot3Wee_ProviderServiceContext.h	\
+	Ieee1609Dot3Wee_IPv6Address.h	\
+	Ieee1609Dot3Wee_ServicePort.h	\
+	Ieee1609Dot3Wee_ProviderMacAddress.h	\
+	Ieee1609Dot3Wee_MACaddress.h	\
+	Ieee1609Dot3Wee_RcpiThreshold.h	\
+	Ieee1609Dot3Wee_WsaCountThreshold.h	\
+	Ieee1609Dot3Wee_WsaCountThresholdInterval.h	\
+	Ieee1609Dot3Wee_EdcaParameterSet.h	\
+	Ieee1609Dot3Wee_EdcaParameterRecord.h	\
+	Ieee1609Dot3Wee_ChannelAccess80211.h	\
+	Ieee1609Dot3Wee_SecondaryDns.h	\
+	Ieee1609Dot3Wee_GatewayMacAddress.h	\
+	Ieee1609Dot3Wee_Latitude.h	\
+	Ieee1609Dot3Wee_Longitude.h	\
+	Ieee1609Dot3Wee_Elevation.h	\
+	Ieee1609Dot3Wsa_SrvAdvMsg.h	\
+	Ieee1609Dot3Wsa_RsvAdvPrtVersion.h	\
+	Ieee1609Dot3Wsa_SrvAdvBody.h	\
+	Ieee1609Dot3Wsa_SrvAdvChangeCount.h	\
+	Ieee1609Dot3Wsa_SrvAdvID.h	\
+	Ieee1609Dot3Wsa_SrvAdvContentCount.h	\
+	Ieee1609Dot3Wsa_SrvAdvMsgHeaderExts.h	\
+	Ieee1609Dot3Wsa_SrvAdvMsgHeaderExt.h	\
+	Ieee1609Dot3Wsa_ExtendedChannelInfos.h	\
+	Ieee1609Dot3Wsa_ExtendedChannelInfo.h	\
+	Ieee1609Dot3Wsa_MedType.h	\
+	Ieee1609Dot3Wsa_ServiceInfos.h	\
+	Ieee1609Dot3Wsa_ServiceInfo.h	\
+	Ieee1609Dot3Wsa_ChannelOptions.h	\
+	Ieee1609Dot3Wsa_ChannelIndex.h	\
+	Ieee1609Dot3Wsa_ServiceInfoExts.h	\
+	Ieee1609Dot3Wsa_ServiceInfoExt.h	\
+	Ieee1609Dot3Wsa_ChannelInfos.h	\
+	Ieee1609Dot3Wsa_ChannelInfo.h	\
+	Ieee1609Dot3Wsa_OperatingClass80211.h	\
+	Ieee1609Dot3Wsa_WsaChInfoDataRate.h	\
+	Ieee1609Dot3Wsa_ChInfoOptions.h	\
+	Ieee1609Dot3Wsa_ChannelInfoExts.h	\
+	Ieee1609Dot3Wsa_ChannelInfoExt.h	\
+	Ieee1609Dot3Wsa_RoutingAdvertisement.h	\
+	Ieee1609Dot3Wsa_RouterLifetime.h	\
+	Ieee1609Dot3Wsa_IpV6Prefix.h	\
+	Ieee1609Dot3Wsa_IpV6PrefixLength.h	\
+	Ieee1609Dot3Wsa_RoutAdvertExts.h	\
+	Ieee1609Dot3Wsa_RoutAdvertExt.h	\
+	Ieee1609Dot3Wsa1609Dot2Encapsulation_WsaPsid.h	\
+	Ieee1609Dot3Wsa1609Dot2Encapsulation_Ieee1609Dot2EncapsulatedWsa.h	\
+	Ieee1609Dot3Wsa1609Dot2Encapsulation_Ieee1609Dot2EncapsulatedUnsecuredWsa.h	\
+	Ieee1609Dot3Wsa1609Dot2Encapsulation_Ieee1609Dot2EncapsulatedSignedWsa.h	\
+	Ieee1609Dot3Wsa1609Dot2Encapsulation_SignerSingleCert.h	\
+	Ieee1609Dot3WsaSsp_WsaSsp.h	\
+	Ieee1609Dot3WsaSsp_AdvertiserPermissions.h	\
+	Ieee1609Dot3WsaSsp_ChannelIdentifier.h	\
+	Ieee1609Dot3WsaSsp_ProviderPermissions.h	\
+	Ieee1609Dot3WsaSsp_ChannelSpecificProviderPermission.h	\
+	Ieee1609Dot3WsaSsp_EdcaIdentifier.h	\
+	Ieee1609Dot3WsaSsp_EnumeratedEdcaIdentifier.h	\
+	Ieee1609Dot3WsaSsp_ExplicitEdcaIdentifier.h	\
+	Ieee1609Dot3WsaSsp_SequenceOfEdcaIdentifier.h	\
+	Ieee1609Dot3Wsm_ShortMsgNpdu.h	\
+	Ieee1609Dot3Wsm_ShortMsgSubtype.h	\
+	Ieee1609Dot3Wsm_NoSubtypeProcessing.h	\
+	Ieee1609Dot3Wsm_ShortMsgVersion.h	\
+	Ieee1609Dot3Wsm_NullNetworking.h	\
+	Ieee1609Dot3Wsm_ShortMsgNextensions.h	\
+	Ieee1609Dot3Wsm_ShortMsgNextension.h	\
+	Ieee1609Dot3Wsm_ShortMsgTpdus.h	\
+	Ieee1609Dot3Wsm_NoTpidProcessing.h	\
+	Ieee1609Dot3Wsm_ShortMsgBcPDU.h	\
+	Ieee1609Dot3Wsm_ShortMsgData.h	\
+	Ieee1609Dot3Wsm_ShortMsgTexts.h	\
+	Ieee1609Dot3Wsm_ShortMsgText.h	\
+	Ieee1609Dot3Wsm_DummyExtension.h	\
+	Ieee1609Dot2Dot1AcaEeInterface_AcaEeInterfacePdu.h	\
+	Ieee1609Dot2Dot1AcaEeInterface_AcaEeCertResponse.h	\
+	Ieee1609Dot2Dot1AcaLaInterface_AcaLaInterfacePdu.h	\
+	Ieee1609Dot2Dot1AcaMaInterface_AcaMaInterfacePdu.h	\
+	Ieee1609Dot2Dot1AcaRaInterface_AcaRaInterfacePdu.h	\
+	Ieee1609Dot2Dot1AcaRaInterface_RaAcaCertRequest.h	\
+	Ieee1609Dot2Dot1AcaRaInterface_RaAcaCertRequestFlags.h	\
+	Ieee1609Dot2Dot1AcaRaInterface_LinkageInfo.h	\
+	Ieee1609Dot2Dot1AcaRaInterface_EncryptedIndividualPLV.h	\
+	Ieee1609Dot2Dot1AcaRaInterface_PreLinkageValue.h	\
+	Ieee1609Dot2Dot1AcaRaInterface_AcaRaCertResponse.h	\
+	Ieee1609Dot2Dot1AcaRaInterface_AcaResponse.h	\
+	Ieee1609Dot2Dot1Acpc_AcpcPdu.h	\
+	Ieee1609Dot2Dot1Acpc_AprvBinaryTree.h	\
+	Ieee1609Dot2Dot1Acpc_AcpcPsid.h	\
+	Ieee1609Dot2Dot1Acpc_UnsecuredAprvBinaryTree.h	\
+	Ieee1609Dot2Dot1Acpc_SignedAprvBinaryTree.h	\
+	Ieee1609Dot2Dot1Acpc_IndividualAprv.h	\
+	Ieee1609Dot2Dot1Acpc_SignedIndividualAprv.h	\
+	Ieee1609Dot2Dot1Acpc_AcpcTreeId.h	\
+	Ieee1609Dot2Dot1Acpc_AcpcNodeValue.h	\
+	Ieee1609Dot2Dot1Acpc_AprvHashCalculationInput.h	\
+	Ieee1609Dot2Dot1CamRaInterface_CamRaInterfacePdu.h	\
+	Ieee1609Dot2Dot1CamRaInterface_RaCamBatchRequest.h	\
+	Ieee1609Dot2Dot1CamRaInterface_CamRaBatchResponse.h	\
+	Ieee1609Dot2Dot1CamRaInterface_BlindedKey.h	\
+	Ieee1609Dot2Dot1CertManagement_HashedId32.h	\
+	Ieee1609Dot2Dot1CertManagement_HashedId48.h	\
+	Ieee1609Dot2Dot1CertManagement_CertManagementPdu.h	\
+	Ieee1609Dot2Dot1CertManagement_CompositeCrl.h	\
+	Ieee1609Dot2Dot1CertManagement_CertificateChain.h	\
+	Ieee1609Dot2Dot1CertManagement_MultiSignedCtl.h	\
+	Ieee1609Dot2Dot1CertManagement_Ieee1609dot2dot1MsctlType.h	\
+	Ieee1609Dot2Dot1CertManagement_FullIeeeTbsCtl.h	\
+	Ieee1609Dot2Dot1CertManagement_ElectorGroupId.h	\
+	Ieee1609Dot2Dot1CertManagement_CtlSequenceNumber.h	\
+	Ieee1609Dot2Dot1CertManagement_CtlElectorEntry.h	\
+	Ieee1609Dot2Dot1CertManagement_CtlRootCaEntry.h	\
+	Ieee1609Dot2Dot1CertManagement_ToBeSignedCtlSignature.h	\
+	Ieee1609Dot2Dot1CertManagement_CertificateManagementInfoStatus.h	\
+	Ieee1609Dot2Dot1CertManagement_SequenceOfCtlInfoStatus.h	\
+	Ieee1609Dot2Dot1CertManagement_CtlInfoStatus.h	\
+	Ieee1609Dot2Dot1CertManagement_SequenceOfCrlInfoStatus.h	\
+	Ieee1609Dot2Dot1CertManagement_CrlInfoStatus.h	\
+	Ieee1609Dot2Dot1CertManagement_SequenceOfMaInfoStatus.h	\
+	Ieee1609Dot2Dot1CertManagement_MaInfoStatus.h	\
+	IEEE1609dot2CrlBaseTypes_CrlContents.h	\
+	IEEE1609dot2CrlBaseTypes_CrlPriorityInfo.h	\
+	IEEE1609dot2CrlBaseTypes_ToBeSignedHashIdCrl.h	\
+	IEEE1609dot2CrlBaseTypes_HashBasedRevocationInfo.h	\
+	IEEE1609dot2CrlBaseTypes_SequenceOfHashBasedRevocationInfo.h	\
+	IEEE1609dot2CrlBaseTypes_ToBeSignedLinkageValueCrl.h	\
+	IEEE1609dot2CrlBaseTypes_JMaxGroup.h	\
+	IEEE1609dot2CrlBaseTypes_SequenceOfJMaxGroup.h	\
+	IEEE1609dot2CrlBaseTypes_LAGroup.h	\
+	IEEE1609dot2CrlBaseTypes_SequenceOfLAGroup.h	\
+	IEEE1609dot2CrlBaseTypes_IMaxGroup.h	\
+	IEEE1609dot2CrlBaseTypes_SequenceOfIMaxGroup.h	\
+	IEEE1609dot2CrlBaseTypes_IndividualRevocation.h	\
+	IEEE1609dot2CrlBaseTypes_SequenceOfIndividualRevocation.h	\
+	IEEE1609dot2CrlBaseTypes_GroupCrlEntry.h	\
+	IEEE1609dot2CrlBaseTypes_SequenceOfGroupCrlEntry.h	\
+	IEEE1609dot2Crl_CrlPsid.h	\
+	IEEE1609dot2Crl_SecuredCrl.h	\
+	IEEE1609dot2CrlSsp_CrlSsp.h	\
+	IEEE1609dot2CrlSsp_CracaType.h	\
+	IEEE1609dot2CrlSsp_PermissibleCrls.h	\
+	Ieee1609Dot2Dot1EcaEeInterface_EcaEeInterfacePdu.h	\
+	Ieee1609Dot2Dot1EcaEeInterface_EeEcaCertRequest.h	\
+	Ieee1609Dot2Dot1EcaEeInterface_EcaEeCertResponse.h	\
+	Ieee1609Dot2Dot1EeMaInterface_EeMaInterfacePdu.h	\
+	Ieee1609Dot2Dot1EeRaInterface_EeRaInterfacePdu.h	\
+	Ieee1609Dot2Dot1EeRaInterface_EeRaCertRequest.h	\
+	Ieee1609Dot2Dot1EeRaInterface_AdditionalParams.h	\
+	Ieee1609Dot2Dot1EeRaInterface_ButterflyParamsOriginal.h	\
+	Ieee1609Dot2Dot1EeRaInterface_ButterflyExpansion.h	\
+	Ieee1609Dot2Dot1EeRaInterface_RaEeCertAck.h	\
+	Ieee1609Dot2Dot1EeRaInterface_RaEeCertInfo.h	\
+	Ieee1609Dot2Dot1EeRaInterface_EeRaDownloadRequest.h	\
+	Ieee1609Dot2Dot1LaMaInterface_LaMaInterfacePdu.h	\
+	Ieee1609Dot2Dot1LaRaInterface_LaRaInterfacePdu.h	\
+	Ieee1609Dot2Dot1MaRaInterface_MaRaInterfacePdu.h	\
+	Ieee1609Dot2Dot1Protocol_SecurityMgmtPsid.h	\
+	Ieee1609Dot2Dot1Protocol_ScmsPdu.h	\
+	Ieee1609Dot2Dot1Protocol_PublicVerificationKey.h	\
+	Ieee1609Dot2Dot1Protocol_Signature.h	\
+	Ieee1609Dot2Dot1Protocol_ToBeSignedCertificate.h	\
+	ScmsPdu-Scoped.h	\
+	Ieee1609Dot2Data-Unsecured.h	\
+	Ieee1609Dot2Data-Signed.h	\
+	Ieee1609Dot2Data-Encrypted.h	\
+	Ieee1609Dot2Dot1Protocol_Ieee1609Dot2Data-EncryptedOpen.h	\
+	Ieee1609Dot2Data-SignedCertRequest.h	\
+	Ieee1609Dot2Dot1Protocol_X509Certificate.h	\
+	Ieee1609Dot2Dot1Protocol_SequenceOfX509Certificate.h	\
+	Ieee1609Dot2Dot1Protocol_X509SignerIdentifier.h	\
+	Ieee1609Dot2Data-SignedX509AuthenticatedCertRequest.h	\
+	Ieee1609Dot2Data-SignedEncrypted.h	\
+	Ieee1609Dot2Data-EncryptedSigned.h	\
+	Ieee1609Dot2Data-EncryptedOpenSigned.h	\
+	Ieee1609Dot2Data-SignedEncryptedCertRequest.h	\
+	Ieee1609Dot2Data-SymmEncryptedSingleRecipient.h	\
+	Ieee1609Dot2Dot1Protocol_SignerSingleCert.h	\
+	Ieee1609Dot2Dot1Protocol_SignerSingleX509Cert.h	\
+	Ieee1609Dot2Dot1Protocol_SignerSelf.h	\
+	Ieee1609Dot2Dot1Protocol_ScmsPdu-RaAcaCertRequest.h	\
+	Ieee1609Dot2Dot1Protocol_ScmsPdu-EeEcaCertRequest.h	\
+	Ieee1609Dot2Dot1Protocol_ScmsPdu-EeRaCertRequest.h	\
+	Ieee1609Dot2Dot1Protocol_ScmsPdu-EeRaSuccessorEnrollmentCertRequest.h	\
+	Ieee1609Dot2Dot1Protocol_ScopedCertificateRequest.h	\
+	Ieee1609Dot2Dot1Protocol_SignedCertificateRequest.h	\
+	Ieee1609Dot2Dot1Protocol_SignedX509CertificateRequest.h	\
+	Ieee1609Dot2Dot1Protocol_AcaEeCertResponsePlainSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_AcaEeCertResponsePrivateSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_AcaEeCertResponseCubkSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_RaAcaCertRequestSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_AcaRaCertResponseSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_CompositeCrlSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_CertificateChainSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_MultiSignedCtlSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_CtlSignatureSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_CertificateManagementInformationStatusSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_EeEcaCertRequestSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_EcaEeCertResponseSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_EeRaCertRequestSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_EeRa1609Dot2AuthenticatedCertRequestSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_EeRaX509AuthenticatedCertRequestSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_RaEeCertAckSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_RaEeCertInfoSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_RaEeCertAndAcpcInfoSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_EeRaDownloadRequestPlainSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_EeRaDownloadRequestSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_EeRaSuccessorEnrollmentCertRequestSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_RaEeEnrollmentCertAckSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_EeRaEncryptedSignedMisbehaviorReportSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_EeRaEncryptedMisbehaviorReportSpdu.h	\
+	Ieee1609Dot2Dot1Protocol_AnyMbrPsid.h	\
+	Ieee1609Dot2Dot1Protocol_BaseMbrPsid.h	\
+	Ieee1609Dot2Dot1Protocol_ScmsSsp.h	\
+	Ieee1609Dot2Dot1Protocol_ElectorSsp.h	\
+	Ieee1609Dot2Dot1Protocol_RootCaSsp.h	\
+	Ieee1609Dot2Dot1Protocol_PgSsp.h	\
+	Ieee1609Dot2Dot1Protocol_IcaSsp.h	\
+	Ieee1609Dot2Dot1Protocol_EcaSsp.h	\
+	Ieee1609Dot2Dot1Protocol_AcaSsp.h	\
+	Ieee1609Dot2Dot1Protocol_CrlSignerSsp.h	\
+	Ieee1609Dot2Dot1Protocol_DcmSsp.h	\
+	Ieee1609Dot2Dot1Protocol_LaSsp.h	\
+	Ieee1609Dot2Dot1Protocol_LopSsp.h	\
+	Ieee1609Dot2Dot1Protocol_MaSsp.h	\
+	Ieee1609Dot2Dot1Protocol_RaSsp.h	\
+	Ieee1609Dot2Dot1Protocol_EeSsp.h	\
+	Ieee1609Dot2Dot1Protocol_AcpcSsp.h	\
+	Ieee1609Dot2Dot1Protocol_CamSsp.h	\
+	Ieee1609Dot2Dot1Protocol_DcSsp.h	\
+	ASN1C-UsefulInformationObjectClasses_EXTERNAL.h
+
+ASN_MODULE_HDRS+=ANY.h
+ASN_MODULE_SRCS+=ANY.c
+ASN_MODULE_HDRS+=OCTET_STRING.h
+ASN_MODULE_HDRS+=OPEN_TYPE.h
+ASN_MODULE_SRCS+=OPEN_TYPE.c
+ASN_MODULE_HDRS+=constr_CHOICE.h
+ASN_MODULE_HDRS+=BOOLEAN.h
+ASN_MODULE_SRCS+=BOOLEAN.c
+ASN_MODULE_HDRS+=ENUMERATED.h
+ASN_MODULE_SRCS+=ENUMERATED.c
+ASN_MODULE_HDRS+=INTEGER.h
+ASN_MODULE_HDRS+=NativeEnumerated.h
+ASN_MODULE_HDRS+=GraphicString.h
+ASN_MODULE_SRCS+=GraphicString.c
+ASN_MODULE_HDRS+=IA5String.h
+ASN_MODULE_SRCS+=IA5String.c
+ASN_MODULE_SRCS+=INTEGER.c
+ASN_MODULE_HDRS+=NULL.h
+ASN_MODULE_SRCS+=NULL.c
+ASN_MODULE_SRCS+=NativeEnumerated.c
+ASN_MODULE_HDRS+=NativeInteger.h
+ASN_MODULE_SRCS+=NativeInteger.c
+ASN_MODULE_HDRS+=OBJECT_IDENTIFIER.h
+ASN_MODULE_SRCS+=OBJECT_IDENTIFIER.c
+ASN_MODULE_HDRS+=asn_codecs_prim.h
+ASN_MODULE_HDRS+=ObjectDescriptor.h
+ASN_MODULE_SRCS+=ObjectDescriptor.c
+ASN_MODULE_HDRS+=UTF8String.h
+ASN_MODULE_SRCS+=UTF8String.c
+ASN_MODULE_HDRS+=asn_SEQUENCE_OF.h
+ASN_MODULE_SRCS+=asn_SEQUENCE_OF.c
+ASN_MODULE_HDRS+=asn_SET_OF.h
+ASN_MODULE_SRCS+=asn_SET_OF.c
+ASN_MODULE_SRCS+=constr_CHOICE.c
+ASN_MODULE_HDRS+=constr_SEQUENCE.h
+ASN_MODULE_SRCS+=constr_SEQUENCE.c
+ASN_MODULE_HDRS+=constr_SEQUENCE_OF.h
+ASN_MODULE_SRCS+=constr_SEQUENCE_OF.c
+ASN_MODULE_HDRS+=constr_SET_OF.h
+ASN_MODULE_SRCS+=constr_SET_OF.c
+ASN_MODULE_HDRS+=asn_application.h
+ASN_MODULE_SRCS+=asn_application.c
+ASN_MODULE_HDRS+=asn_ioc.h
+ASN_MODULE_HDRS+=asn_system.h
+ASN_MODULE_HDRS+=asn_codecs.h
+ASN_MODULE_HDRS+=asn_internal.h
+ASN_MODULE_SRCS+=asn_internal.c
+ASN_MODULE_HDRS+=asn_bit_data.h
+ASN_MODULE_SRCS+=asn_bit_data.c
+ASN_MODULE_SRCS+=OCTET_STRING.c
+ASN_MODULE_HDRS+=BIT_STRING.h
+ASN_MODULE_SRCS+=BIT_STRING.c
+ASN_MODULE_SRCS+=asn_codecs_prim.c
+ASN_MODULE_HDRS+=ber_tlv_length.h
+ASN_MODULE_SRCS+=ber_tlv_length.c
+ASN_MODULE_HDRS+=ber_tlv_tag.h
+ASN_MODULE_SRCS+=ber_tlv_tag.c
+ASN_MODULE_HDRS+=constr_TYPE.h
+ASN_MODULE_SRCS+=constr_TYPE.c
+ASN_MODULE_HDRS+=constraints.h
+ASN_MODULE_SRCS+=constraints.c
+ASN_MODULE_HDRS+=ber_decoder.h
+ASN_MODULE_HDRS+=der_encoder.h
+ASN_MODULE_SRCS+=ber_decoder.c
+ASN_MODULE_SRCS+=der_encoder.c
+ASN_MODULE_SRCS+=ANY_ber.c
+ASN_MODULE_SRCS+=BOOLEAN_ber.c
+ASN_MODULE_SRCS+=INTEGER_ber.c
+ASN_MODULE_SRCS+=NULL_ber.c
+ASN_MODULE_SRCS+=NativeInteger_ber.c
+ASN_MODULE_SRCS+=OCTET_STRING_ber.c
+ASN_MODULE_SRCS+=OPEN_TYPE_ber.c
+ASN_MODULE_SRCS+=asn_codecs_prim_ber.c
+ASN_MODULE_SRCS+=constr_CHOICE_ber.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_OF_ber.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_ber.c
+ASN_MODULE_SRCS+=constr_SET_OF_ber.c
+ASN_MODULE_HDRS+=xer_support.h
+ASN_MODULE_HDRS+=xer_decoder.h
+ASN_MODULE_HDRS+=xer_encoder.h
+ASN_MODULE_SRCS+=xer_support.c
+ASN_MODULE_SRCS+=xer_decoder.c
+ASN_MODULE_SRCS+=xer_encoder.c
+ASN_MODULE_SRCS+=ANY_xer.c
+ASN_MODULE_SRCS+=BIT_STRING_xer.c
+ASN_MODULE_SRCS+=BOOLEAN_xer.c
+ASN_MODULE_SRCS+=INTEGER_xer.c
+ASN_MODULE_SRCS+=NULL_xer.c
+ASN_MODULE_SRCS+=NativeEnumerated_xer.c
+ASN_MODULE_SRCS+=NativeInteger_xer.c
+ASN_MODULE_SRCS+=OBJECT_IDENTIFIER_xer.c
+ASN_MODULE_SRCS+=OCTET_STRING_xer.c
+ASN_MODULE_SRCS+=OPEN_TYPE_xer.c
+ASN_MODULE_SRCS+=asn_codecs_prim_xer.c
+ASN_MODULE_SRCS+=constr_CHOICE_xer.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_OF_xer.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_xer.c
+ASN_MODULE_SRCS+=constr_SET_OF_xer.c
+ASN_MODULE_HDRS+=oer_decoder.h
+ASN_MODULE_HDRS+=oer_encoder.h
+ASN_MODULE_HDRS+=oer_support.h
+ASN_MODULE_SRCS+=oer_decoder.c
+ASN_MODULE_SRCS+=oer_encoder.c
+ASN_MODULE_SRCS+=oer_support.c
+ASN_MODULE_SRCS+=OPEN_TYPE_oer.c
+ASN_MODULE_SRCS+=INTEGER_oer.c
+ASN_MODULE_SRCS+=BIT_STRING_oer.c
+ASN_MODULE_SRCS+=OCTET_STRING_oer.c
+ASN_MODULE_SRCS+=NativeInteger_oer.c
+ASN_MODULE_SRCS+=NativeEnumerated_oer.c
+ASN_MODULE_SRCS+=constr_CHOICE_oer.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_oer.c
+ASN_MODULE_SRCS+=constr_SET_OF_oer.c
+ASN_MODULE_SRCS+=BOOLEAN_oer.c
+ASN_MODULE_SRCS+=ENUMERATED_oer.c
+ASN_MODULE_SRCS+=NULL_oer.c
+ASN_MODULE_HDRS+=per_decoder.h
+ASN_MODULE_HDRS+=per_encoder.h
+ASN_MODULE_HDRS+=per_support.h
+ASN_MODULE_HDRS+=per_opentype.h
+ASN_MODULE_SRCS+=per_decoder.c
+ASN_MODULE_SRCS+=per_encoder.c
+ASN_MODULE_SRCS+=per_support.c
+ASN_MODULE_SRCS+=per_opentype.c
+ASN_MODULE_HDRS+=uper_decoder.h
+ASN_MODULE_HDRS+=uper_encoder.h
+ASN_MODULE_HDRS+=uper_support.h
+ASN_MODULE_HDRS+=uper_opentype.h
+ASN_MODULE_SRCS+=uper_decoder.c
+ASN_MODULE_SRCS+=uper_encoder.c
+ASN_MODULE_SRCS+=uper_support.c
+ASN_MODULE_SRCS+=uper_opentype.c
+ASN_MODULE_SRCS+=ANY_uper.c
+ASN_MODULE_SRCS+=BIT_STRING_uper.c
+ASN_MODULE_SRCS+=BOOLEAN_uper.c
+ASN_MODULE_SRCS+=ENUMERATED_uper.c
+ASN_MODULE_SRCS+=INTEGER_uper.c
+ASN_MODULE_SRCS+=NULL_uper.c
+ASN_MODULE_SRCS+=NativeEnumerated_uper.c
+ASN_MODULE_SRCS+=NativeInteger_uper.c
+ASN_MODULE_SRCS+=OCTET_STRING_uper.c
+ASN_MODULE_SRCS+=OPEN_TYPE_uper.c
+ASN_MODULE_SRCS+=constr_CHOICE_uper.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_OF_uper.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_uper.c
+ASN_MODULE_SRCS+=constr_SET_OF_uper.c
+ASN_MODULE_HDRS+=aper_decoder.h
+ASN_MODULE_HDRS+=aper_encoder.h
+ASN_MODULE_HDRS+=aper_support.h
+ASN_MODULE_HDRS+=aper_opentype.h
+ASN_MODULE_SRCS+=aper_decoder.c
+ASN_MODULE_SRCS+=aper_encoder.c
+ASN_MODULE_SRCS+=aper_support.c
+ASN_MODULE_SRCS+=aper_opentype.c
+ASN_MODULE_SRCS+=ANY_aper.c
+ASN_MODULE_SRCS+=BOOLEAN_aper.c
+ASN_MODULE_SRCS+=ENUMERATED_aper.c
+ASN_MODULE_SRCS+=INTEGER_aper.c
+ASN_MODULE_SRCS+=NULL_aper.c
+ASN_MODULE_SRCS+=NativeEnumerated_aper.c
+ASN_MODULE_SRCS+=NativeInteger_aper.c
+ASN_MODULE_SRCS+=OCTET_STRING_aper.c
+ASN_MODULE_SRCS+=OPEN_TYPE_aper.c
+ASN_MODULE_SRCS+=constr_CHOICE_aper.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_OF_aper.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_aper.c
+ASN_MODULE_SRCS+=constr_SET_OF_aper.c
+ASN_MODULE_SRCS+=BIT_STRING_print.c
+ASN_MODULE_SRCS+=BOOLEAN_print.c
+ASN_MODULE_SRCS+=INTEGER_print.c
+ASN_MODULE_SRCS+=NULL_print.c
+ASN_MODULE_SRCS+=NativeInteger_print.c
+ASN_MODULE_SRCS+=OBJECT_IDENTIFIER_print.c
+ASN_MODULE_SRCS+=OCTET_STRING_print.c
+ASN_MODULE_SRCS+=UTF8String_print.c
+ASN_MODULE_SRCS+=constr_CHOICE_print.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_print.c
+ASN_MODULE_SRCS+=constr_SET_OF_print.c
+ASN_MODULE_HDRS+=asn_random_fill.h
+ASN_MODULE_SRCS+=asn_random_fill.c
+ASN_MODULE_SRCS+=BIT_STRING_rfill.c
+ASN_MODULE_SRCS+=BOOLEAN_rfill.c
+ASN_MODULE_SRCS+=INTEGER_rfill.c
+ASN_MODULE_SRCS+=NULL_rfill.c
+ASN_MODULE_SRCS+=NativeInteger_rfill.c
+ASN_MODULE_SRCS+=OBJECT_IDENTIFIER_rfill.c
+ASN_MODULE_SRCS+=OCTET_STRING_rfill.c
+ASN_MODULE_SRCS+=UTF8String_rfill.c
+ASN_MODULE_SRCS+=constr_CHOICE_rfill.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_rfill.c
+ASN_MODULE_SRCS+=constr_SET_OF_rfill.c
+ASN_MODULE_HDRS+=jer_support.h
+ASN_MODULE_HDRS+=jer_decoder.h
+ASN_MODULE_HDRS+=jer_encoder.h
+ASN_MODULE_SRCS+=jer_support.c
+ASN_MODULE_SRCS+=jer_decoder.c
+ASN_MODULE_SRCS+=jer_encoder.c
+ASN_MODULE_SRCS+=ANY_jer.c
+ASN_MODULE_SRCS+=BIT_STRING_jer.c
+ASN_MODULE_SRCS+=BOOLEAN_jer.c
+ASN_MODULE_SRCS+=ENUMERATED_jer.c
+ASN_MODULE_SRCS+=INTEGER_jer.c
+ASN_MODULE_SRCS+=NULL_jer.c
+ASN_MODULE_SRCS+=NativeEnumerated_jer.c
+ASN_MODULE_SRCS+=NativeInteger_jer.c
+ASN_MODULE_SRCS+=OBJECT_IDENTIFIER_jer.c
+ASN_MODULE_SRCS+=OCTET_STRING_jer.c
+ASN_MODULE_SRCS+=OPEN_TYPE_jer.c
+ASN_MODULE_SRCS+=asn_codecs_prim_jer.c
+ASN_MODULE_SRCS+=constr_CHOICE_jer.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_OF_jer.c
+ASN_MODULE_SRCS+=constr_SEQUENCE_jer.c
+ASN_MODULE_SRCS+=constr_SET_OF_jer.c
+
+ASN_MODULE_CFLAGS=
+
+lib_LTLIBRARIES+=libasncodec.la
+libasncodec_la_SOURCES=$(ASN_MODULE_SRCS) $(ASN_MODULE_HDRS)
+libasncodec_la_CPPFLAGS=-I$(top_srcdir)/
+libasncodec_la_CFLAGS=$(ASN_MODULE_CFLAGS)
+libasncodec_la_LDFLAGS=-lm

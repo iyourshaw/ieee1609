@@ -1,0 +1,258 @@
+Ieee1609Dot3Wee {iso(1) identified-organization(3) ieee(111) standards-association-numbered-series-standards(2) wave-stds(1609) dot3(3) wee(1) major-version-1(1) minor-version-1(1)}
+
+DEFINITIONS AUTOMATIC TAGS ::= 
+BEGIN
+
+/* Quality check info:
+Proper syntax and correct mapping of UPER on the intended binary presentation as specified in the main body of this document was validated with the OSS ASN.1 Studio tool.
+*/
+
+IMPORTS
+  ARFCN-ValueEUTRA-r9,
+  P-Max,
+  SL-Priority-r13,
+  SL-TxPoolIdentity-r12
+FROM EUTRA-RRC-Definitions 
+
+  SL-V2X-Preconfiguration-r14 
+FROM EUTRA-Sidelink-Preconf
+;
+
+-- General data type (from 17419.1)
+-- VarLengthNumber
+VarLengthNumber ::= CHOICE {
+    content [0] INTEGER(0..127), -- one octet length
+    extension   [1] Ext1
+}
+Ext1 ::= CHOICE {
+    content [0] INTEGER(128..16511), -- two octets length
+    extension   [1] Ext2
+}
+Ext2 ::= CHOICE {
+    content [0] INTEGER(16512..2113663), -- three octets length
+    extension   [1] Ext3
+}
+Ext3 ::= INTEGER(2113664..270549119,...) -- four and more octets length
+
+-- WAVE Extension Elements CLASS and reference value definitions 
+-- CLASS
+EXT-TYPE ::= CLASS {
+   &extRef RefExt UNIQUE,
+   &ExtValue
+} WITH SYNTAX {&ExtValue IDENTIFIED BY &extRef}
+
+-- General extension (profiling)
+Extension {EXT-TYPE : ExtensionTypes} ::= SEQUENCE {
+    extensionId EXT-TYPE.&extRef({ExtensionTypes}),
+    value    EXT-TYPE.&ExtValue({ExtensionTypes}{@.extensionId})
+}
+
+-- ExtensionTypes are specified for WSA and WSM
+
+-- Reference values (for all types of extensions)
+RefExt ::= INTEGER (0..255)
+
+c-Reserved                 RefExt ::= 0
+c-TxPowerUsed80211         RefExt ::= 4 -- WSM
+c-2Dlocation               RefExt ::= 5 -- WSA Header
+c-3Dlocation               RefExt ::= 6 -- WSA Header
+c-advertiserID             RefExt ::= 7 -- WSA Header
+c-ProviderServContext      RefExt ::= 8 -- WSA Service Info
+c-IPv6Address              RefExt ::= 9 -- WSA Service Info
+c-servicePort              RefExt ::= 10 -- WSA Service Info
+c-ProviderMACaddress       RefExt ::= 11 -- WSA Service Info
+c-EDCAparameterSet         RefExt ::= 12 -- WSA Channel Info
+c-SecondaryDNS             RefExt ::= 13 -- WSA Routing Advertisement
+c-GatewayMACaddress        RefExt ::= 14 -- WSA Routing Advertisement
+c-ChannelNumber80211       RefExt ::= 15 -- WSM-N-Header
+c-DataRate80211            RefExt ::= 16 -- WSM-N-Header
+c-RepeatRate               RefExt ::= 17 -- WSA Header
+c-RCPIthreshold            RefExt ::= 19 -- WSA Service Info
+c-WSAcountThreshold        RefExt ::= 20 -- WSA Service Info
+c-ChannelAccess            RefExt ::= 21 -- WSA Channel Info
+c-WSAcountThresInt         RefExt ::= 22 -- WSA Service Info
+c-ChannelLoad              RefExt ::= 23 -- WSMP-N-Header
+c-ProtocolType             RefExt ::= 24 -- WSA Service Info
+c-CompactTimeConfidence    RefExt ::= 25 -- WSM-N-Header
+c-AssertedBySASigner       RefExt ::= 26 -- WSA Service Info
+c-ExtendedChannelInfos     RefExt ::= 84 -- WSA Extended Channel Infos
+c-ApplicationData          RefExt ::= 85 -- WSA Service Info
+
+-- ChannelLoad is not specified in this standard.
+-- CommunicationProfileID is not specified in this standard.
+-- Reserved for ISO:    RefExt in the range 80 to 120
+-- all other values of     RefExt are reserved
+
+--
+-- The following are optional WAVE Information Elements which may be
+-- included in the WSMP header. See subclause 8.3.4
+--
+DataRate80211 ::= INTEGER (0..255)
+  -- Data Rate, see subclause 8.3.4.3
+
+TXpower80211 ::= INTEGER (-128..127)
+  -- Transmit Power Used, see subclause 8.3.4.4
+
+ChannelNumber80211 ::= INTEGER (0..255)
+  -- Channel Number, see subclause 8.3.4.2
+
+CompactTimeConfidence ::= INTEGER (0..255)
+  -- Compact Time Confidence, see subclause 8.3.4.6
+
+--
+-- The following are optional WAVE Information Elements which may be
+-- included in the WSA header. See subclause 8.2.2.6
+--
+RepeatRate ::= INTEGER (0..255)
+  -- Repeat Rate, see subclause 8.2.2.6.1
+
+TwoDLocation ::= SEQUENCE {
+    latitude    Latitude,
+    longitude   Longitude
+}
+  -- 2DLocation, see subclause 8.2.2.6.2
+
+ThreeDLocation ::= SEQUENCE {
+    latitude    Latitude,
+    longitude   Longitude,
+    elevation   Elevation
+}
+  -- 3DLocation, see subclause 8.2.2.6.3
+
+--
+-- max. 32 octets are allowed in AdvertiserIdentifier
+-- The 32 characters may produce more than 32 octets in UPER
+--
+AdvertiserIdentifier ::= UTF8String (SIZE (1..32))
+  -- Advertiser Identifier, see subclause 8.2.2.6.4
+
+--
+-- LTEv2xChannelInfo structure defined in M.6.2.2.2, used to provide
+-- information about RF configuration on LTE-V2X channels.
+--
+LTEv2xChannelInfo ::= SEQUENCE {
+  -- Channel identifier and Transmit parameters
+  
+  txPoolEarfcn    ARFCN-ValueEUTRA-r9 OPTIONAL,
+  pMax            P-Max OPTIONAL,
+  pppp            SL-Priority-r13 OPTIONAL,
+  txPool          SL-TxPoolIdentity-r12 OPTIONAL,
+  minMcs          INTEGER (0..31) OPTIONAL,
+  maxMcs          INTEGER (0..31) OPTIONAL,
+  minPdb          INTEGER (0..1023) OPTIONAL,
+  -- Traffic limiting
+  mtu             INTEGER (1..8192) OPTIONAL,
+  maxDataRate     MaxDataRateBytesPerSec OPTIONAL,
+  minPeriodicity  MinimumTrafficPeriodicity OPTIONAL,
+  -- Operational parameters
+  maxSpeed        INTEGER (0..255) OPTIONAL,
+  maxRange        INTEGER (1..4096) OPTIONAL,
+  maxCbr          INTEGER (0..100) OPTIONAL,
+  -- Preconfiguration
+  preconfigInfo   SL-V2X-Preconfiguration-r14 OPTIONAL,
+  ...
+}
+
+MaxDataRateBytesPerSec ::= SEQUENCE {
+  number INTEGER (1..1000),
+  multiplier ENUMERATED {bytes, kb, mb, gb, ...}
+} 
+
+MinimumTrafficPeriodicity ::= ENUMERATED {
+  sf20, sf50, sf100, sf200, sf300, sf400, sf500,
+  sf600, sf700, sf800, sf900, sf1000
+}
+
+ProtocolType ::= VarLengthNumber
+  -- Used in Alternate Interface, see 8.2.3.5.8
+
+ApplicationData ::= OCTET STRING
+  -- Used in Application Data, see 8.2.3.5.9
+
+AssertedBySASigner ::= NULL
+  -- Used in Asserted By SA Signer extension, see 8.2.3.5.10
+
+--
+-- The following are optional WAVE Information Elements which may be
+-- included in the Service Info Instance. See subclause 8.2.3.5
+--
+--
+-- The PSC consists of maximum 31 octets. fillBit was added to 
+-- generate byte aligned fields (even with using UPER).
+-- See subclause 8.2.3.5.1
+--
+ProviderServiceContext ::= SEQUENCE {
+  fillBit BIT STRING (SIZE(3)), -- all bits set to zero
+  psc   OCTET STRING (SIZE(0..31)) -- size zero is not allowed
+}
+
+IPv6Address ::= OCTET STRING (SIZE (16))
+  -- IPv6 Address, see subclause 8.2.3.5.2
+
+ServicePort ::= INTEGER (0..65535)
+  -- Service Port, see subclause 8.2.3.5.3
+
+ProviderMacAddress ::= MACaddress
+  -- Provider MAC Address, see subclause 8.2.3.5.4
+
+MACaddress ::= OCTET STRING (SIZE(6))
+
+RcpiThreshold ::= INTEGER (0..255) -- see IEEE Std 802.11
+  -- RCPI Threshold, see subclause 8.2.3.5.5
+
+WsaCountThreshold ::= INTEGER (0..255)
+  -- WSA Count Threshold, see subclause 8.2.3.5.6
+
+WsaCountThresholdInterval ::= INTEGER (0..255) -- value 0 is not used
+  -- WSA Count Threshold Interval, see subclause 8.2.3.5.7
+
+--
+-- The following are optional WAVE Information Elements which may be
+-- included in the Channel Info Instance. See subclause 8.2.4.8
+--
+EdcaParameterSet ::= SEQUENCE {
+    acbeRecord  EdcaParameterRecord,
+    acbkRecord  EdcaParameterRecord,
+    acviRecord  EdcaParameterRecord,
+    acvoRecord  EdcaParameterRecord
+}
+  -- EDCA Parameter Set, see subclause 8.2.4.8.1
+
+EdcaParameterRecord ::= SEQUENCE {
+    res INTEGER (0..1),
+    aci INTEGER (0..3),
+    acm     INTEGER (0..1),
+    aifsn   INTEGER (0..15),
+    ecwMax  INTEGER (0..15), -- CWmax = 2^ecwMax-1
+    ecwMin  INTEGER (0..15),
+    txopLimit   INTEGER (0..65535)
+    }
+  -- See text below Figure 31 regarding EDCA Parameter Records
+
+ChannelAccess80211 ::= INTEGER {
+    continuous  (0),
+    alternatingTimeSlot0    (1),
+    alternatingTimeSlot1    (2)
+} (0..255)
+  -- Channel Access, see subclause 8.2.4.8.2
+
+--
+-- The following are optional WAVE Information Elements which may be
+-- included in the WAVE Router Advertisement. See subclause 8.2.5.7
+--
+SecondaryDns ::= IPv6Address
+  -- Secondary DNS, see subclause 8.2.5.7.1
+
+GatewayMacAddress ::= MACaddress
+  -- Gateway MAC Address, see subclause 8.2.5.7.2
+
+Latitude ::= SEQUENCE{
+    fill BIT STRING (SIZE(1)), -- set to '0' (MSB of Latitude)
+    lat  INTEGER (-900000000..900000001) -- in 0.1 micro degree
+}
+
+Longitude ::= INTEGER (-1799999999..1800000001)
+
+Elevation ::= INTEGER (-4096..61439)
+
+END

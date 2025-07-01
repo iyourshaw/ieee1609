@@ -1,0 +1,98 @@
+{
+    "version": 3,
+    "type": "explicit",
+    "issuer": {
+        "self": "sha256"
+    },
+    "toBeSigned": {
+        "id": {
+            "name": "v2xrootca.ghsiss.com"
+        },
+        "cracaId": "000000",
+        "crlSeries": 0,
+        "validityPeriod": {
+            "start": 385689600,
+            "duration": {
+                "years": 70
+            }
+        },
+        "appPermissions": [
+            {
+                "psid": 35,
+                "ssp": {
+                    "opaque": "810001"
+                }
+            },
+            {
+                "psid": 256,
+                "ssp": {
+                    "opaque": "00010001010100"
+                }
+            }
+        ],
+        "certIssuePermissions": [
+            {
+                "subjectPermissions": {
+                    "all": null
+                },
+                "minChainLength": 3,
+                "chainLengthRange": -1,
+                "eeType": "C0"
+            },
+            {
+                "subjectPermissions": {
+                    "explicit": [
+                        {
+                            "psid": 35
+                        }
+                    ]
+                },
+                "minChainLength": 1,
+                "chainLengthRange": -1,
+                "eeType": "C0"
+            },
+            {
+                "subjectPermissions": {
+                    "explicit": [
+                        {
+                            "psid": 38
+                        }
+                    ]
+                },
+                "minChainLength": 1,
+                "chainLengthRange": -1,
+                "eeType": "C0"
+            },
+            {
+                "subjectPermissions": {
+                    "explicit": [
+                        {
+                            "psid": 256,
+                            "sspRange": {
+                                "all": null
+                            }
+                        }
+                    ]
+                },
+                "minChainLength": 1,
+                "chainLengthRange": -1,
+                "eeType": "C0"
+            }
+        ],
+        "verifyKeyIndicator": {
+            "verificationKey": {
+                "ecdsaNistP256": {
+                    "compressed-y-1": "FE699DFFCC5D811BEF8605A5E5936296E2C4982757671B8A38FB3E5EDAB039C9"
+                }
+            }
+        }
+    },
+    "signature": {
+        "ecdsaNistP256Signature": {
+            "rSig": {
+                "x-only": "BE45EE44A5BE27460F1E79776C9D88EB242D5ECBC4F5FDFDA2BAE12A9E1E729B"
+            },
+            "sSig": "F426A4C5A14561AAD6E1697EF4C2CD0097C105015209E9F3CB23053F76555BC9"
+        }
+    }
+}

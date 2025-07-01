@@ -1,0 +1,14 @@
+include Makefile.am.libasncodec
+
+bin_PROGRAMS += asn1convert
+asn1convert_CFLAGS = $(ASN_MODULE_CFLAGS) -DASN_DISABLE_JER_SUPPORT 
+asn1convert_CPPFLAGS = -I$(top_srcdir)/-DASN_PDU_COLLECTION 
+asn1convert_LDADD = libasncodec.la
+asn1convert_SOURCES = \
+	converter-example.c\
+	pdu_collection.c
+regen: regenerate-from-asn1-source
+
+regenerate-from-asn1-source:
+	asn1c -fno-include-deps -fcompound-names-all -gen-OER -fincludes-quoted -no-gen-JER -pdu=all ../../asn/1609.3/1609dot2-P2P.asn ../../asn/1609.3/1609dot2-base-types.asn ../../asn/1609.3/1609dot2-schema.asn ../../asn/1609.3/EUTRA-RRC-Definitions.asn ../../asn/1609.3/EUTRA-Sidelink-Preconf.asn ../../asn/1609.3/EtsiTs102941Crl.asn ../../asn/1609.3/Ieee1609Dot3Wee.asn ../../asn/1609.3/Ieee1609Dot3Wsa.asn ../../asn/1609.3/Ieee1609Dot3Wsa1609Dot2Encapsulation.asn ../../asn/1609.3/Ieee1609Dot3WsaSsp.asn ../../asn/1609.3/Ieee1609Dot3Wsm.asn ../../asn/1609.3/crl-base-types.asn ../../asn/1609.3/crl-protocol.asn ../../asn/1609.3/crl-ssp.asn
+

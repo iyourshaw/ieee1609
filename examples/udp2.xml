@@ -1,0 +1,28 @@
+<ShortMsgNpdu>
+    <subtype>
+        <nullNetworking>
+            <version>3</version>
+        </nullNetworking>
+    </subtype>
+    <transport>
+        <bcMode>
+            <addrInfo>
+                <content>32</content>
+            </addrInfo>
+        </bcMode>
+    </transport>
+    <body>
+        03 81 00 40 03 80 5F 00 14 5C 5A 98 D2 C6 89 80 
+        6B 66 DA FA CB 14 53 8E 0B 23 0F 94 14 0F D2 20 
+        A1 B8 A8 FD FA 1F A1 00 7F FF 02 80 82 12 71 00 
+        89 E0 08 01 03 BE 74 FF F5 BF E0 E0 48 34 B0 8F 
+        FD 4B EE 92 DF 82 EE A6 FF A8 3E 11 5E 0A 3E 21 
+        91 40 00 21 17 C0 28 90 0A 01 4A 0F DF BF FF C7 
+        FF FF 28 08 54 00 40 01 20 00 02 43 BE 48 18 E6 
+        A0 80 B2 EF B1 BB 38 32 8C 83 80 80 4A D9 F1 DD 
+        E1 75 46 A4 77 12 2A 40 56 E2 EB 70 01 A0 08 B0 
+        6F 7E 82 D0 97 90 94 F8 DB 38 7B BF 01 64 CB DE 
+        EE 88 B8 58 C4 22 C1 EE 2B AB 8A 4E B0 D4 8C 93 
+        24 1E 66 BF 62 36 FD 49 78 40 EB EA
+    </body>
+</ShortMsgNpdu>
